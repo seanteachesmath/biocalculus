@@ -10,13 +10,13 @@ var ptx_lunr_docs = [
   "body": "   example.org   https:\/\/example.org   copyright  "
 },
 {
-  "id": "section-title",
+  "id": "sect-lines",
   "level": "1",
-  "url": "section-title.html",
+  "url": "sect-lines.html",
   "type": "Section",
   "number": "1.1",
-  "title": "Section title",
-  "body": " Section title  Hello  "
+  "title": "Linear functions",
+  "body": " Linear functions  Hello  "
 },
 {
   "id": "colophon-2",
