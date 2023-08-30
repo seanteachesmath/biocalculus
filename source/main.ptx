@@ -46,15 +46,7 @@
       </colophon>
     </frontmatter>
 
-    <chapter xml:id="chapter-title">
-      <title>Chapter title</title>
-
-      <section xml:id="section-title">
-        <title>Section title</title>
-        <p>Hello</p>
-      </section>
-
-    </chapter>
+<xi:include href="intro.ptx" />
 
     <backmatter xml:id="backmatter">
       <title>Backmatter</title>
