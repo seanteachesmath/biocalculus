@@ -11,16 +11,16 @@
     </latex-image-preamble>
   </docinfo>
 
-  <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+  <book xml:id="biocalculus">
+    <title>Bio-Calculus</title>
+    <subtitle>Notes for Fall 2023</subtitle>
 
     <frontmatter xml:id="frontmatter">
       <titlepage>
         <author>
-          <personname>You</personname>
-          <department>Your department</department>
-          <institution>Your institution</institution>
+          <personname>Sean Laverty</personname>
+          <department>Department of Mathematics and Statistics</department>
+          <institution>University of Central Oklahoma</institution>
         </author>
         <date>
           <today />
@@ -31,9 +31,9 @@
 
         <website>
           <name>
-            <c>example.org</c>
+            <c>seanteachesmath.github.io</c>
           </name>
-          <address>https://example.org</address>
+          <address>https://seanteachesmath.github.io</address>
         </website>
 
         <copyright>
