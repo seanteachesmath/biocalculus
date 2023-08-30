@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": "   example.org   https:\/\/example.org   copyright  "
+  "body": "   seanteachesmath.github.io   https:\/\/seanteachesmath.github.io   copyright  "
 },
 {
   "id": "sect-lines",
