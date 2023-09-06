@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+      <section xml:id="sect-intro-curves">
+      <title>Power and Polynomial functions</title>
+      
+      <p>Up next are power and polynomial functions. Consider something like
+	  <m>y = f(x) = mx+b</m>, but instead drop the "<m>+b</m>" and consider
+	  changing the exponent on the variable <m>x</m>. What's left turns into
+	  something like <me>y = g(x) = mx^{n}</me>.</p>
+
+	  <p>For something like <m>m=1</m> and <m>n=1</m> we have the line
+	  <m>y = g(x) = x</m>. The graph is a straight line on standard
+	  Cartesian coordinates, tilted upward from left to right at a
+	  <m>45^{\circ}</m> angle. For powers like <m>n=2</m> or <m>n=3</m>,
+	  we have power functions representing the leading terms of
+	  quadratic or cubic functions. For somewhat unusal powers of 
+	  <m>0 \le n \le 1</m>, like <m>n = \frac{1}{2}</m> or <m>n = \frac{1}{3}</m> 
+	  we have power functions like the square root or cube root, respectively.</p>
+	  
+	  <p>When using square roots, you may be more familiar writing
+	  <m>\sqrt{x}</m>, but we can write <m>g(x) = x^{\frac{1}{2}} =
+	  \sqrt{x}</m>. Similarly for the cube root <m>\sqrt[3]{x} =
+	  x^{\frac{1}{3}}</m>. So, in addition to the squaring and cubing
+	  functions, the functions square root and cube root (and all of the
+	  others) are examples of power functions.</p>
+
+
+	  
+	</section>
+

@@ -3,5 +3,6 @@
     <chapter xml:id="chap-intro"  xmlns:xi="http://www.w3.org/2001/XInclude">
       <title>Introduction</title>
 <xi:include href="intro-lines.ptx" />
+<xi:include href="intro-curves.ptx" />
 
 </chapter>
