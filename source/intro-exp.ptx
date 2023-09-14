@@ -1,0 +1,86 @@
+<?xml version='10' encoding='utf-8'?>
+
+<section xml:id="sect-intro-exp">
+<title>Exponential and Logarithmic functions</title>
+
+After introducing the linear functions, power functions, and polynomial functions, we can address exponential and logarithmic functions These two panic-inducing functions are probably among the most used in calculations in the lab sciences Consider the following curve
+We can contrast the form of power functions and exponential functions and try to build some intuition
+Which of the following are exponential functions?  
+<ul>
+<li><p><m>f(x)=x2</m></p></li>
+<li><p><m>f(x)=ex </m></p></li>
+<li><p><m>f(x)=10x </m></p></li>
+<li><p><m>f(x)=xe</m></p></li>
+</ul>
+
+Also helpful are the following rules that work for real numbers <m>a, n, m</m>
+
+<ul>
+<li><p><m> an  am =</m></p></li>
+<li><p><m> (an)m =  am =</m></p></li>
+<li><p><m>an am =</m></p></li>
+<li><p><m> a0 =</m></p></li>
+<li><p><m> a1 =</m></p></li>
+</ul>
+
+These rules also work when the base is a variable like x or the base of an exponential function
+like e Likewise we can have expressions involving variables in exponents
+Caution: We do not have rules for things like <m>am + an</m> (or, assuming a and b are different, an  bm)
+Before getting into too many problems that use exponentials, we should review the logarithm - it is necessary for some, but not all problems involving exponentials (See separate page)
+These functions are inverses, so
+This is helpful for solving equations involving exponential functions
+<me>eln(x) = x and ln(ex) = x</me>
+
+
+Before getting to that, what are logarithms? Logarithms often show up when we need to systemat- ically (and reversibly) manipulate formulas or data For example, we can use the base-10 logarithm below, as we might in a spreadsheet
+x y
+1/4 1/2 11 93
+25 5 49 7
+log10(x)
+log10(x)
+
+What just happened?
+To introduce the logarithm as the inverse function to an exponential function, it is helpful to think of powers of ten Consider how we express large numbers in scientific notation,
+1, 000, 000 = 106
+To write one million, we multiply   factors of  raised to the power
+ We say,
+gives ,
+
+or, symbolically
+Logarithms are powers!
+log10(1, 000, 000) =
+Using your calculator find each of the following  log10(1) =
+ log10(e) =  ln(1) =
+ ln(1/2) =
+ ln(2) =  ln(e) =
+
+Just like for exponents (and exponential functions) we had a list of rules, we also have commonly- used algebraic rules for manipulating logarithm functions These work whether or not we consider the logarithm to be base-e or base-10, or any other base Since we will most often use the natural logarithm, <m>\ln(x)</m>, we will write the rules that way The following rules work for real numbers <m>a, b, n</m>
+<ul>
+<li><p><m> \ln(ab) =</m></p></li>
+<li><p><m>  \ln(an) =</m></p></li>
+<li><p><m>  \ln\left(\frac{1}{b}\right)</m></p></li>
+<li><p><m>  \ln(a/b)</m></p></li>
+<li><p><m>  \ln(1) =</m></p></li>
+<li><p><m>  \ln(e) =</m></p></li>
+</ul>
+Common applications of exponentials involve solving equations that arise in chemistry, microbi- ology, or population growth Suppose the function <m>p(t) = 362e0012t</m> describes the population of some organism as a function of time measured in weeks
+ What is the initial population size?
+ What is the population size after six weeks?
+ When has the population reached twice its initial population size?
+Suppose that the amount of radioactivity that remains from an injected medical tracer is described
+by <m>r(t) = 15e0027t</m>, where <m>t</m> is in hours
+ What is the initial amount of radioactivity?
+ How much radioactivity remains when it has reached half of the initial amount?
+ When has the radioactivity reached half its initial amount?
+
+<example xml:id="intro-log-transform">
+<title>Log-transforming equations</title> 
+<statement><p>An important application of logarithms, related to graphing, was hinted at in the table a few pages
+back The data from the ordered pairs are just a few nice points from the graph of <m>f(x) = </m>
+That doesnt seem like it has much to do with anything, but remember we can write <m>y = f(x) = x2 </m> Lets take logarithms of both sides and see what happens As long as were careful, it doesnt really matter which logarithm we use, but we will use the base-10 logarithm for consistency with our earlier example
+Historically (and still even today) scientists have been obsessed with graphing straight lines
+<p></statement>
+</example>
+
+</section>
+

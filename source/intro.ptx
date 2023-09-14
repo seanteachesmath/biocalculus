@@ -4,5 +4,6 @@
       <title>Introduction</title>
 <xi:include href="intro-lines.ptx" />
 <xi:include href="intro-curves.ptx" />
+<xi:include href="intro-exp.ptx" />
 
 </chapter>
