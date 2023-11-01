@@ -1,0 +1,3114 @@
+
+\batchmode
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amsfonts,amssymb,multicol}
+\usepackage{booktabs,tabularx,colortbl,caption,xcolor}
+\usepackage{path}
+  \discretionaries |~!@$%^&*()_+`-=#{"}[]:;'<>,.?\/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789|
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}  % allows use of eps files with pdftex
+\usepackage{epsf}
+\usepackage{epsfig}
+\usepackage{pslatex}
+\usepackage{fullpage}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{eurosym}                   % the euro symbol
+\DeclareUnicodeCharacter{20AC}{\euro}  % make it possible to use the UTF-8 character for the euro symbol in problems
+
+
+\pagestyle{plain}
+\def\endline{\bigskip\hrule width \hsize height 0.8pt }
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\less}{<}
+\newcommand{\grt}{>}
+
+% This is used to signal PG that we are not using multicols
+\newcommand{\nocolumns}{}
+
+% BEGIN capa tex macros
+
+\newcommand{\capa}{{\sl C\kern-.10em\raise-.00ex\hbox{\rm A}\kern-.22em%
+{\sl P}\kern-.14em\kern-.01em{\rm A}}}
+  
+\newenvironment{choicelist}
+{\begin{list}{}
+	{\setlength{\rightmargin}{0in}\setlength{\leftmargin}{0.13in}
+	\setlength{\topsep}{0.05in}\setlength{\itemsep}{0.022in}
+	\setlength{\parsep}{0in}\setlength{\belowdisplayskip}{0.04in}
+	\setlength{\abovedisplayskip}{0.05in}
+	\setlength{\abovedisplayshortskip}{-0.04in}
+	\setlength{\belowdisplayshortskip}{0.04in}}
+	}
+{\end{list}}
+
+% END capa tex macros 
+
+\begin{document}
+\newpage
+\setcounter{page}{1}
+%% decoded old answers, saved. (keys = 
+\ifdefined\nocolumns\else \end{multicols}\fi
+
+\noindent {\large \bf Sean Laverty}
+\hfill
+{\large \bf {2023-Fa-Laverty-MATH2153}}
+% Uncomment the line below if this course has sections. Note that this is a comment in TeX mode since this is only processed by LaTeX
+%   {\large \bf { Section:  } }
+\par
+\noindent{\large \bf {Assignment 0\_review\_packet  due 08/31/2023 at 11:59pm CDT}}
+\par\noindent \bigskip
+% Uncomment and edit the line below if this course has a web page. Note that this is a comment in TeX mode.
+%See the course web page for information http://yoururl/yourcourse
+
+
+
+
+ \ifdefined\nocolumns\else \begin{multicols}{2}
+\columnwidth=\linewidth \fi
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = AnSwEr0004,AnSwEr0002,AnSwEr0003,AnSwEr0001
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 1. {\footnotesize (1 point) \path|set0_review_packet/function_notation.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Record decimal answers with three digits after a decimal.}
+
+Enter the formula for the function \(f(x) = {x^{2}}\).
+
+{
+ \(f(x) =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+
+Find the following function values, some may be numbers, some may be expressions containing variables.
+
+{
+ \(f(-1) =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(f(\frac{5}{2}) =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(f(x+1) =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+Find the following function values, some may be numbers, some may be expressions containing variables.
+
+{
+ \(f(-1) = {1}\)
+
+ \(f(\frac{5}{2}) = {6.25}\)
+
+ \(f(x+1) = {\left(x+1\right)^{2}}\)
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}x^2\end{verbatim}
+\item\begin{verbatim}1\end{verbatim}
+\item\begin{verbatim}6.25\end{verbatim}
+\item\begin{verbatim}(x+1)^2\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 2. {\footnotesize (1 point) \path|set0_review_packet/composition.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+Find the following compositions using the functions \(f(x) = {x^{2}+3x}\) and \(g(x) = {-x+2}\).
+
+{
+ \((f \circ g)(x) =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+ \((g \circ f)(x) =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+\par}%
+
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+Find the following compositions.
+
+{
+ \((f \circ g)(x) ={\left(-x+2\right)^{2}+3\!\left(-x+2\right)}\)
+
+ \((g \circ f)(x) = {-\left(x^{2}+3x\right)+2}\)
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}(-x+2)^2+3*(-x+2)\end{verbatim}
+\item\begin{verbatim}-(x^2+3*x)+2\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 3. {\footnotesize (1 point) \path|set0_review_packet/solve.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+Solve \(3x-4y = 5\) for \(y\).
+
+{
+ \(y =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+Solve \(3x-4y = 5\) for \(y\).
+
+{
+ \(y = {\frac{5-3x}{-4}}\)
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}(5-3*x)/(-4)\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 4. {\footnotesize (1 point) \path|set0_review_packet/linear.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Record decimal answers with three digits after a decimal.}
+
+On average, the number of flowers on a particular species of plant is given as a function of time in days (starting now) by \(f(t) = {5.2+2.6t}\).  Find each of the following.
+
+{
+ \(f(0) =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(f(10) =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ The time at which the average number of flowers reaches 21.
+{
+  \(t =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+\par}%
+
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+
+On average, the number of flowers on a particular species of plant is given as a function of time in days (starting now) by \(f(t) = {5.2+2.6t}\).  Find each of the following.
+
+{
+ \(f(0) = {5.2}\)
+
+ \(f(10) = {31.2}\)
+
+ The time at which the average number of flowers reaches 21.
+{
+  \(t = {6.07692}\)
+\par}%
+ \(y =\)
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}5.2\end{verbatim}
+\item\begin{verbatim}31.2\end{verbatim}
+\item\begin{verbatim}(21-5.2)/2.6\end{verbatim}
+\end{itemize}}\par
+%% decoded old answers, saved. (keys = 
+\leavevmode\\\relax 
+\noindent {\tiny Generated by \copyright WeBWorK, http://webwork.maa.org, Mathematical Association of America}
+
+
+
+\newpage%
+\setcounter{page}{1}% 
+
+%% decoded old answers, saved. (keys = 
+\ifdefined\nocolumns\else \end{multicols}\fi
+
+\noindent {\large \bf Sean Laverty}
+\hfill
+{\large \bf {2023-Fa-Laverty-MATH2153}}
+% Uncomment the line below if this course has sections. Note that this is a comment in TeX mode since this is only processed by LaTeX
+%   {\large \bf { Section:  } }
+\par
+\noindent{\large \bf {Assignment topic\_1\_lines  due 09/10/2023 at 11:59pm CDT}}
+\par\noindent \bigskip
+% Uncomment and edit the line below if this course has a web page. Note that this is a comment in TeX mode.
+%See the course web page for information http://yoururl/yourcourse
+
+
+
+
+ \ifdefined\nocolumns\else \begin{multicols}{2}
+\columnwidth=\linewidth \fi
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 1. {\footnotesize (2 points) \path|problems/intro_lines/lines.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Please round your answers to three decimal places.   Your answer will be checked to two decimal places.}
+
+Determine the following linear functions.
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Give the line whose slope is \(m = 3\) and intercept is \(5\).
+
+ The appropriate linear function is \(y=\)\mbox{\parbox[t]{4ex}{\hrulefill}}
+
+\pgmlItem{}Give the line whose slope is \(m = 1\) and passes through the point \((8, 9)\).
+
+ The appropriate linear function is \(y=\)\mbox{\parbox[t]{4ex}{\hrulefill}}
+
+\par}%
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}The line whose slope is \(m = 3\) and intercept is \(5\) is \(y={3x+5}\).
+
+\pgmlItem{}The line whose slope is \(m = 1\) and passes through the point \((8, 9)\) is \(y={1\!\left(x-8\right)+9}\).
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}3*x+5\end{verbatim}
+\item\begin{verbatim}1*(x-8)+9\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 2. {\footnotesize (2 points) \path|problems/intro_lines/intersection.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Please round your answers to three decimal places. Your answer will be checked to two decimal places.}
+
+Consider the functions \(f(x) = {7x+8}\) and \(g(x) = {4x+3}\).
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Solve the equation \({7x+8} = 3\) for \(x\).
+
+ Enter your solution \(x=\)\mbox{\parbox[t]{4ex}{\hrulefill}}
+
+\pgmlItem{}Solve the equation \({7x+8} = {4x+3}\) for \(x\).
+
+ Enter your solution \(x=\)\mbox{\parbox[t]{4ex}{\hrulefill}}
+
+\par}%
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+{
+ a. \(\displaystyle{f(x) = }\) has a solution \(x=-0.714\).
+
+ b. \(\displaystyle{f(x) = g(x)}\) has a solution \(x=-1.667\).
+\par}%
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}-0.714\end{verbatim}
+\item\begin{verbatim}-1.667\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 3. {\footnotesize (3 points) \path|problems/intro_lines/glucose.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\bf  Please round your answers to three decimal places. Your answer will be checked to two decimal places. } \leavevmode\\\relax 
+
+Consider the production of glucose as a function of mass in a growing plant.  Mass is measured in grams and glucose production is measured in milligrams (per day).\leavevmode\\\relax 
+
+\par 
+\begin{center} 
+
+\par\smallskip\begin{center}\begin{tabular}{|c|c|} \hline
+\(M\text{ mass, (grams)}\) &\(G\text{ (glucose, milligrams)}\) \\ \hline 
+4 &7 \\ \hline 
+4.5 &8.2 \\ \hline 
+9 &19 \\ \hline 
+11 &23.8 \\ \hline 
+
+\end {tabular}\end{center}\par\smallskip
+
+\end{center} 
+\par 
+
+a). Find the slope of the line that connects the point \((4, 7)\) to one other point in the table.  \leavevmode\\\relax 
+     The slope is \(m =\) \mbox{\parbox[t]{40ex}{\hrulefill}}.\leavevmode\\\relax 
+\par 
+
+b). Give the formula of the line describing the relationship between the mass of the plant in grams and the corresponding glucose production.  Be sure to use \(M\) as your variable in the formula.  \leavevmode\\\relax 
+     The formula is \(G(M) =\) \mbox{\parbox[t]{40ex}{\hrulefill}}.\leavevmode\\\relax 
+\par 
+
+c). What is the predicted glucose production for a \(17\) gram plant?\leavevmode\\\relax 
+    The predicted production is, \mbox{\parbox[t]{40ex}{\hrulefill}} milligrams.\leavevmode\\\relax 
+
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  
+a). The slope is \(m=2.4\).\leavevmode\\\relax 
+\par 
+
+b). The formula is \(G(M)=(2.4*M-2.6)\).\leavevmode\\\relax 
+\par 
+
+c). The glucose production is predicted to be \(38.2\) milligrams for a \(17\) gram plant.\leavevmode\\\relax 
+
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}2.4\end{verbatim}
+\item\begin{verbatim}2.4*M-2.6\end{verbatim}
+\item\begin{verbatim}38.2\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 4. {\footnotesize (3 points) \path|problems/intro_lines/cricket.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\bf  Please round your answers to three decimal places. Your answer will be checked to two decimal places.} \leavevmode\\\relax 
+
+The following relationship, presented by A. E. Dolbear in the entertaining scientific paper 'The Cricket as a Thermometer' allows one to estimate the temperature by counting the chirps made by a cricket each minute.  All temperatures are recorded in Fahrenheit.
+
+\par 
+\begin{center} 
+
+\par\smallskip\begin{center}\begin{tabular}{|c|c|} \hline
+\(N\text{ (Number of chirps)}\) &\(T\text{ (Temperature)}\) \\ \hline 
+45 &51.25 \\ \hline 
+70 &57.5 \\ \hline 
+85 &61.25 \\ \hline 
+110 &67.5 \\ \hline 
+
+\end {tabular}\end{center}\par\smallskip
+
+\end{center} 
+\par 
+
+a). Find the slope of the line that connects the point \((45, 51.25)\) to one other point in the table.  \leavevmode\\\relax 
+     The slope is \(m =\) \mbox{\parbox[t]{40ex}{\hrulefill}}.\leavevmode\\\relax 
+\par 
+
+b). Give the formula of the line describing the relationship between the number of chirps and the predicted temperature.  Be sure to use \(N\) as your variable in the formula.  \leavevmode\\\relax 
+     The formula is \(T(N) =\) \mbox{\parbox[t]{40ex}{\hrulefill}}.\leavevmode\\\relax 
+\par 
+
+c). If the crickets were totally silent, in other words \(N = 0\), what is the predicted temperature?\leavevmode\\\relax 
+    The predicted temperature is, \(T(0) =\)\mbox{\parbox[t]{40ex}{\hrulefill}}.\leavevmode\\\relax 
+
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  a). The slope is \(m=0.25\).\leavevmode\\\relax 
+\par 
+
+b). The formula is \(T(N)=(N/4+40)\).\leavevmode\\\relax 
+\par 
+
+c). The temperature is predicted to be \(40\) when the crickets are silent.\leavevmode\\\relax 
+
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}0.25\end{verbatim}
+\item\begin{verbatim}N/4+40\end{verbatim}
+\item\begin{verbatim}40\end{verbatim}
+\end{itemize}}\par
+%% decoded old answers, saved. (keys = 
+\leavevmode\\\relax 
+\noindent {\tiny Generated by \copyright WeBWorK, http://webwork.maa.org, Mathematical Association of America}
+
+
+
+\newpage%
+\setcounter{page}{1}% 
+
+%% decoded old answers, saved. (keys = 
+\ifdefined\nocolumns\else \end{multicols}\fi
+
+\noindent {\large \bf Sean Laverty}
+\hfill
+{\large \bf {2023-Fa-Laverty-MATH2153}}
+% Uncomment the line below if this course has sections. Note that this is a comment in TeX mode since this is only processed by LaTeX
+%   {\large \bf { Section:  } }
+\par
+\noindent{\large \bf {Assignment topic\_2\_power\_poly  due 09/10/2023 at 11:59pm CDT}}
+\par\noindent \bigskip
+% Uncomment and edit the line below if this course has a web page. Note that this is a comment in TeX mode.
+%See the course web page for information http://yoururl/yourcourse
+
+
+
+
+ \ifdefined\nocolumns\else \begin{multicols}{2}
+\columnwidth=\linewidth \fi
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 1. {\footnotesize (1 point) \path|set_topic2_power_poly/physics.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Record decimal answers with three digits after a decimal.}
+
+As a function of velocity, \(v\) in meters per second, the function \(K(v) = \frac{1}{2}mv^2\), describes the kinetic energy, \(K\), for an object with a given mass, \(m\) in kilograms.  Find each of the following.
+
+{
+ Find the kinetic energy of an object with a mass of \(5\) kilograms and a velocity of \(5.5\) meter per second? \mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ Find the kinetic energy of an object with a mass of \(5\) kilograms and a velocity of \(15.5\) meter per second? \mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+As a function of velocity, \(v\) in meters per second, the function \(K(v) = \frac{1}{2}mv^2\), describes the kinetic energy, \(K\), for an object with a given mass, \(m\) in kilograms.  Find each of the following.
+
+{
+ The kinetic energy of an object with a mass of \(5\) kilograms and a velocity of \(5.5\) meter per second is \(K(5.5) = {75.625}\).
+
+ The kinetic energy of an object with a mass of \(5\) kilograms and a velocity of \(15.5\) meter per second is \(K(15.5) = {600.625}\).
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}0.5*5*5.5^2\end{verbatim}
+\item\begin{verbatim}0.5*5*(5.5+10)^2\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 2. {\footnotesize (1 point) \path|set_topic_1_poly_power/composition.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Record decimal answers with three digits after a decimal.}
+
+The surface area of a roughly circular seasonal pond can be described by \(A(r) = {\pi r^{2}}\), but the radius (in meters) changes according to \(r(t) = {30-0.16t}\).
+
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Given \(A(r) = {\pi r^{2}}\), what is the radius if the current area is \(700\) square meters?
+
+\(r =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+\pgmlItem{}Given \(r(t) = {30-0.16t}\), how long is it until the pond has completely dried up (or until the radius reaches zero)?
+
+\(t =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+\pgmlItem{}Write the composition \((A \circ r)(t) = A(r(t))\) that gives the area as a function of time.
+
+\((A \circ r)(t) = A(r(t)) =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+\pgmlItem{}Using the composition you just found, give the initial area of the pond.
+
+\((\text{initial area}) =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+\par}%
+
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+The surface area of a roughly circular seasonal pond can be described by \(A(r) = {\pi r^{2}}\), but the radius (in meters) changes according to \(r(t) = {30-0.16t}\).
+
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Given \(A(r) = {\pi r^{2}}\), if the current area is \(700\) square meters, the radius is \(r = {14.9271}\).
+
+\pgmlItem{}Given \(r(t) = {30-0.16t}\), the pond has completely dried up (or the radius reaches zero) at \(t = {187.5}\).
+
+\pgmlItem{}The composition \((A \circ r)(t) = A(r(t))\) that gives the area as a function of time is \((A \circ r)(t) = A(r(t)) = {\pi \!\left(30-0.16t\right)^{2}}\).
+
+\pgmlItem{}Using the composition we just found, the initial area of the pond is \({2827.43}\).
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}sqrt(700/pi)\end{verbatim}
+\item\begin{verbatim}30/0.16\end{verbatim}
+\item\begin{verbatim}pi*(30-0.16*t)^2\end{verbatim}
+\item\begin{verbatim}2827.43\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 3. {\footnotesize (1 point) \path|set_topic_2_power_poly/physics.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+The function \(s(t) = {-16t^{2}+9t+18}\) describes the height (in feet) of an object in free fall as a function of time (in seconds).
+
+{
+ What is the initial height of the object?
+{
+  \(\text{height} =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+
+ When does the object land? {\itshape{}Hint: consider when \(s(t) = 0\).}
+{
+  \(t=\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+
+ When is the height when \(t = 0.69\)?
+{
+  \(\text{height} =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+\par}%
+
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+The function \(s(t) = {-16t^{2}+9t+18}\) describes the height (in feet) of an object in free fall as a function of time (in seconds).
+
+{
+ What is the initial height of the object?
+
+{
+  \(\text{height} = 18\)
+\par}%
+
+ When does the object land? {\itshape{}Hint: consider when \(s(t) = 0\).}
+
+{
+  \(t = {1.37857}\)
+\par}%
+
+ When is the height when \(t = 0.69\)?
+{
+  \(\text{height} = {16.5924}\)
+\par}%
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}18\end{verbatim}
+\item\begin{verbatim}[-9-sqrt(9^2-4*-16*18)]/(2*-16)\end{verbatim}
+\item\begin{verbatim}16.5924\end{verbatim}
+\end{itemize}}\par
+%% decoded old answers, saved. (keys = 
+\leavevmode\\\relax 
+\noindent {\tiny Generated by \copyright WeBWorK, http://webwork.maa.org, Mathematical Association of America}
+
+
+
+\newpage%
+\setcounter{page}{1}% 
+
+%% decoded old answers, saved. (keys = 
+\ifdefined\nocolumns\else \end{multicols}\fi
+
+\noindent {\large \bf Sean Laverty}
+\hfill
+{\large \bf {2023-Fa-Laverty-MATH2153}}
+% Uncomment the line below if this course has sections. Note that this is a comment in TeX mode since this is only processed by LaTeX
+%   {\large \bf { Section:  } }
+\par
+\noindent{\large \bf {Assignment topic\_3\_exp\_log  due 09/18/2023 at 11:59pm CDT}}
+\par\noindent \bigskip
+% Uncomment and edit the line below if this course has a web page. Note that this is a comment in TeX mode.
+%See the course web page for information http://yoururl/yourcourse
+
+
+
+
+ \ifdefined\nocolumns\else \begin{multicols}{2}
+\columnwidth=\linewidth \fi
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 1. {\footnotesize (2 points) \path|problems/intro_exp/doubling.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+Consider a population of microorganisms that grows according to \(s(t) = {18.8e^{1.5t}}\).
+
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Find the doubling time of the population, \(\tau_{D}\).
+
+ \(\tau_{D} =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+\pgmlItem{}Find the time that the population reaches a size of \(s(t) = 34.8\).
+
+ \(t =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+\par}%
+
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+We have:
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}The doubling time of the population \(\tau_{D} = {0.462}\).
+
+\pgmlItem{}The time that the population reaches a size of \(s(t) = 34.8\) is \(t = {0.411}\).
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}[ln(2)]/1.5\end{verbatim}
+\item\begin{verbatim}[ln(34.8/18.8)]/1.5\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 2. {\footnotesize (3 points) \path|problems/intro_exp/growth.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+Consider a population of microorganisms that grows exponentially.
+
+{
+ a. The population doubles after \({0.856}~\text{days}\), what is its growth rate \(\alpha\)?
+
+ \(\alpha =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ b. Given that growth rate, and an initial population size of \(15.4\), using this information enter the formula for the exponential function, \(s(t)\), that describes population growth:
+
+ \(s(t) =\)\mbox{\parbox[t]{15ex}{\hrulefill}}
+
+ {\itshape{}Hint: it might help to think of your function as \(\displaystyle{(\text{a number})*e\text{^(a number*t)}}\), paying close attention to the parentheses in the exponent.}
+ {\itshape{}Hint 2: If you are stuck, look back at problem 1 for an example of an exponential function.}
+
+ c. Given that growth rate, and an initial population size of \(15.4\), how long until the population reaches a size of  \(28.4\)? 
+
+ {\itshape{}Hint: it might help to use your result from part b.}
+
+ \(t =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+Consider a population of microorganisms that grows exponentially.
+
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}The population doubles after \({0.856}~\text{days}\), what is it's growth rate \(\alpha\)?
+
+ \(\alpha = 0.81\)
+
+\pgmlItem{}Given that growth rate, and an initial population size of \(15.4\), enter the exponential function, \(s(t)\), that describes population growth:
+
+ \(s(t) = {15.4e^{0.81t}}\)
+
+\pgmlItem{}Given that growth rate, and an initial population size of \(15.4\), how long until the population reaches a size of  \(28.4\)? 
+
+ \(t = {0.756}\)
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}0.81\end{verbatim}
+\item\begin{verbatim}15.4*e^(0.81*t)\end{verbatim}
+\item\begin{verbatim}[ln(28.4/15.4)]/0.81\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 3. {\footnotesize (2 points) \path|problems/intro_exp/decay.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+Consider a dose of a radioactive medical tracer that vanishes according to \(r(t) = {14.9e^{-0.52t}}\).
+
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Find the half-life of the sample, \(\tau_{1/2}\).
+
+ \(\tau_{1/2} =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+\pgmlItem{}Find the time that the amount of tracer reaches a value of \(r(t) = 3.725\).
+
+ \(t =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+
+\par}%
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+We have:
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}The half-life of the sample, \(\tau_{1/2}\), is \(\tau_{1/2} = {1.333}\).
+
+\pgmlItem{}The time that the amount of tracer reaches a value of \(r(t) = 3.725\) is \(t = {2.666}\).
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}[ln(2)]/0.52\end{verbatim}
+\item\begin{verbatim}-[ln(3.725/14.9)]/0.52\end{verbatim}
+\end{itemize}}\par
+%% decoded old answers, saved. (keys = 
+\leavevmode\\\relax 
+\noindent {\tiny Generated by \copyright WeBWorK, http://webwork.maa.org, Mathematical Association of America}
+
+
+
+\newpage%
+\setcounter{page}{1}% 
+
+%% decoded old answers, saved. (keys = 
+\ifdefined\nocolumns\else \end{multicols}\fi
+
+\noindent {\large \bf Sean Laverty}
+\hfill
+{\large \bf {2023-Fa-Laverty-MATH2153}}
+% Uncomment the line below if this course has sections. Note that this is a comment in TeX mode since this is only processed by LaTeX
+%   {\large \bf { Section:  } }
+\par
+\noindent{\large \bf {Assignment topic\_4\_dtds  due 09/21/2023 at 11:59pm CDT}}
+\par\noindent \bigskip
+% Uncomment and edit the line below if this course has a web page. Note that this is a comment in TeX mode.
+%See the course web page for information http://yoururl/yourcourse
+
+
+
+
+ \ifdefined\nocolumns\else \begin{multicols}{2}
+\columnwidth=\linewidth \fi
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 1. {\footnotesize (4 points) \path|problems/intro_dtds/cell.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Enter all values to three digits {\itshape{}AFTER} the decimal place.}
+
+The concentration of a radioactive medical tracer changes according to the discrete-time dynamical system \(\displaystyle y_{t+1} = 0.9y_t\).
+
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Starting from \(y_0 = 8.5\) compute the next three values of the solution.
+
+ \(y_1 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(y_2 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(y_3 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+\pgmlItem{}Find the equilibrium value of the concentration:
+
+ \(y^* =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+ {\itshape{}Hint: solve the equation \(y^* = f(y^*)\) for the equilibrium value \(y^*\).}
+
+\pgmlItem{}Sketch a cobwebbing diagram to confirm your work.  {\itshape{}There is nothing to turn in for this part.}
+\par}%
+
+\par}%
+\includegraphics[width=0.8\linewidth]{/opt/webwork/webwork2/htdocs/tmp/2023-Fa-Laverty-MATH2153/gif/b179c7f2-ad65-3562-a01d-14db5c23fcee___e4afd78a-38b9-3733-b3a0-b0d40f14e8e9.png}
+
+
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+A population of yeast grows according to the discrete-time dynamical system \(\displaystyle y_{t+1} = 0.9y_t\).
+
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Starting from \(y_0 = 8.5\) compute the next three values of the solution.
+
+ \(y_1 = {7.65}\)
+
+ \(y_2 = {6.885}\)
+
+ \(y_3 = {6.197}\)
+
+\pgmlItem{}Find the equilibrium value of the yeast population size:
+
+ \(y^* = {0}\)
+
+\pgmlItem{}Sketch a cobwebbing diagram to confirm your work.
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}7.65\end{verbatim}
+\item\begin{verbatim}6.885\end{verbatim}
+\item\begin{verbatim}6.197\end{verbatim}
+\item\begin{verbatim}0\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 2. {\footnotesize (4 points) \path|problems/intro_dtds/equilib.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Enter all values to three digits {\itshape{}AFTER} the decimal place.}
+
+Consider the discrete-time dynamical system \(\displaystyle M_{t+1} = 0.4M_t + 1.5\) describing the concentration of medicine in a patient's bloodstream.
+
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Starting from \(M_0 = 1\) compute the next three values of the solution.
+
+ \(M_1 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(M_2 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(M_3 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+\pgmlItem{}Find the value of the equilibrium drug concentration:
+
+ \(M^* =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+\pgmlItem{}Sketch a cobwebbing diagram to confirm your work. {\itshape{}There is nothing to turn in for this part.}
+\par}%
+
+\par}%
+\includegraphics[width=0.8\linewidth]{/opt/webwork/webwork2/htdocs/tmp/2023-Fa-Laverty-MATH2153/gif/7052dcfe-683e-3b0b-aeb0-5c03555d4505___a38e1046-2c6e-3241-b1f1-9eabcdce26ab.png}
+
+
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+Consider the discrete-time dynamical system \(\displaystyle M_{t+1} = 0.4M_t + 1.5\) describing the concentration of medicine in a patient's bloodstream.
+
+{\let\pgmlItem=\pgmlalphaItem
+\pgmlItem{}Starting from \(M_0 = 1\) compute the next three values of the solution.
+
+ \(M_1 = {1.9}\)
+
+ \(M_2 = {2.26}\)
+
+ \(M_3 = {2.404}\)
+
+\pgmlItem{}Find the value of the equilibrium drug concentration:
+
+ \(M^* = {2.5}\)
+
+\pgmlItem{}Sketch a cobwebbing diagram to confirm your work. {\itshape{}There is nothing to turn in for this part.}
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}1.9\end{verbatim}
+\item\begin{verbatim}2.26\end{verbatim}
+\item\begin{verbatim}2.404\end{verbatim}
+\item\begin{verbatim}1.5/(1-0.4)\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 3. {\footnotesize (4 points) \path|problems/intro_dtds/fake.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Enter all values to three digits {\itshape{}AFTER} the decimal place.}
+
+Consider the discrete-time dynamical system \(\displaystyle x_{t+1} = 3.5x_t - 8\), where \(x_t\) has no particular biological meaning.
+
+{
+ a. Starting from \(x_0 = {4.2}\) compute the next three values of the solution.
+
+ \(x_1 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(x_2 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(x_3 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ b. Find the equilibrium value.
+
+ \(x^* =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+ {\itshape{}Hint: solve the equation \(x^* = f(x^*)\) for the equilibrium value \(x^*\), where \(f\) is the updating function.}
+
+ c. Sketch a cobwebbing diagram to confirm your work. {\itshape{}There is nothing to turn in for this part.}
+\par}%
+
+\par}%
+\includegraphics[width=0.8\linewidth]{/opt/webwork/webwork2/htdocs/tmp/2023-Fa-Laverty-MATH2153/gif/e7b59d29-4982-3785-b0c8-a8c3b351228b___9efed19b-898d-3939-8eed-d4df5950ac42.png}
+
+
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+Consider the discrete-time dynamical system \(\displaystyle x_{t+1} = 3.5x_t - 8\), where \(x_t\) has no particular biological meaning.
+
+{
+ a. Starting from \(x_0 = {4.2}\) compute the next three values of the solution.
+
+ \(x_1 = {6.7}\)
+
+ \(x_2 = {15.45}\)
+
+ \(x_3 = {46.075}\)
+
+ b. Find the equilibrium population size:
+
+ \(x^* = {3.2}\)
+
+ c. Sketch a cobwebbing diagram to confirm your work.
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}6.7\end{verbatim}
+\item\begin{verbatim}15.45\end{verbatim}
+\item\begin{verbatim}46.075\end{verbatim}
+\item\begin{verbatim}-8/(1-3.5)\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 4. {\footnotesize (4 points) \path|problems/intro_dtds/immig.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Enter all values to three digits {\itshape{}AFTER} the decimal place.}
+
+A population of copepod grows according to the discrete-time dynamical system \(\displaystyle c_{t+1} = 0.3c_t + 5\), where \(t\) is counted in weeks.  In this case a fraction \(0.3\) of the previous week's population escapes predation and \(5\) new individuals hatch.
+
+{
+ a. Starting from \(c_0 = 10\) compute the next three values of the solution.
+
+ \(c_1 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(c_2 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(c_3 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ b. Find the equilibrium population size.
+
+ \(c^* =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+ {\itshape{}Hint: solve the equation \(c^* = f(c^*)\) for the equilibrium value \(c^*\), where \(f\) is the updating function.}
+
+ c. Sketch a cobwebbing diagram to confirm your work. {\itshape{}There is nothing to turn in for this part.}
+\par}%
+
+\par}%
+\includegraphics[width=0.8\linewidth]{/opt/webwork/webwork2/htdocs/tmp/2023-Fa-Laverty-MATH2153/gif/eafd9332-77ef-3c7a-a7bc-97d07988efaa___d08eb8de-1e32-3622-afcc-02e6783dd438.png}
+
+
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+A population of copepod grows according to the discrete-time dynamical system \(\displaystyle c_{t+1} = 0.3c_t + 5\), where \(t\) is counted in weeks.  In this case a fraction \(0.3\) of the previous week's population escapes predation and \(5\) new individuals hatch.
+
+{
+ a. Starting from \(c_0 = 10\) compute the next three values of the solution.
+
+ \(c_1 = {8}\)
+
+ \(c_2 = {7.4}\)
+
+ \(c_3 = {7.22}\)
+
+ b. Find the equilibrium population size:
+
+ \(c^* = {7.143}\)
+
+ c. Sketch a cobwebbing diagram to confirm your work.
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}8\end{verbatim}
+\item\begin{verbatim}7.4\end{verbatim}
+\item\begin{verbatim}7.22\end{verbatim}
+\item\begin{verbatim}5/(1-0.3)\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 5. {\footnotesize (4 points) \path|problems/intro_dtds/fake2.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Enter all values to three digits {\itshape{}AFTER} the decimal place.}
+
+Consider the discrete-time dynamical system \(\displaystyle x_{t+1} = -x_t + 2\), where \(x_t\) has no particular biological meaning.
+
+{
+ a. Starting from \(x_0 = 0.6\) compute the next three values of the solution.
+
+ \(x_1 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(x_2 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ \(x_3 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+ b. Find the equilibrium value.
+
+ \(x^* =\)\mbox{\parbox[t]{10ex}{\hrulefill}}
+
+ {\itshape{}Hint: solve the equation \(x^* = f(x^*)\) for the equilibrium value \(x^*\), where \(f\) is the updating function.}
+
+ c. Sketch a cobwebbing diagram to confirm your work. {\itshape{}There is nothing to turn in for this part.}
+\par}%
+
+\par}%
+\includegraphics[width=0.8\linewidth]{/opt/webwork/webwork2/htdocs/tmp/2023-Fa-Laverty-MATH2153/gif/e8deb140-d615-3aae-be83-98a4da9e1e5d___a6f25a2e-068a-3184-addf-28f429e68a10.png}
+
+
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+Consider the discrete-time dynamical system \(\displaystyle x_{t+1} = -x_t + 2\), where \(x_t\) has no particular biological meaning.
+
+{
+ a. Starting from \(x_0 = 0.6\) compute the next three values of the solution.
+
+ \(x_1 = {1.4}\)
+
+ \(x_2 = {0.6}\)
+
+ \(x_3 = {1.4}\)
+
+ b. Find the equilibrium population size:
+
+ \(x^* = {1}\)
+
+ c. Sketch a cobwebbing diagram to confirm your work.
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}1.4\end{verbatim}
+\item\begin{verbatim}0.6\end{verbatim}
+\item\begin{verbatim}1.4\end{verbatim}
+\item\begin{verbatim}2/(1--1)\end{verbatim}
+\end{itemize}}\par
+
+\medskip
+\goodbreak
+\hrule
+\nobreak
+\smallskip
+%% decoded old answers, saved. (keys = 
+
+    \ifx\pgmlMarker\undefined
+      \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to tell if \newline was used
+    \fi
+    \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+    \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+    \parindent=0pt
+    \catcode`\^^M=\active
+    \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+    \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+  
+%%% BEGIN PROBLEM PREAMBLE
+{\bf 6. {\footnotesize (4 points) \path|problems/intro_dtds/wflaw.pg|}}\newline \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % do not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=0pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmldiscItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+\def^^M{\ifmmode\else\space\fi\ignorespaces}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% END PROBLEM PREAMBLE
+{\pgmlSetup
+{\bfseries{}Enter all values to three digits {\itshape{}AFTER} the decimal place.}
+
+The Weber-Fechner law describes our ability to detect small differences in various stimuli.  For example, it can be applied to the sequence of audio frequencies we are able to distinguish between.  Consider a person that can detect an initial frequency of \(f_1 = 400\) Hertz.  The next frequency that can be detected is \(f_2 = 404\), meaning that \(f_{n+1} = a f_n\)  where \(a = {1.01}\), or  \(f_{n+1} ={1.01}f_n\).
+
+{
+ a. What are the next two frequencies the person can detect?
+
+{
+  \(f_3 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+  \(f_4 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+
+ b. Suppose a more preceptive person can hear a second frequency of \(f_2 = 401\).
+
+{
+  What is their value of \(\alpha\)? \mbox{\parbox[t]{3.5ex}{\hrulefill}}
+\par}%
+
+ c. What are the next two frequencies that he can detect?
+
+{
+  \(f_3 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+
+  \(f_4 =\)\mbox{\parbox[t]{5ex}{\hrulefill}}
+\par}%
+\par}%
+
+\par}%
+
+%%% BEGIN HINT
+\par \par {\bf Hint: }{\it  (Instructor hint preview: show the student hint after the following number of attempts: 1 \leavevmode\\\relax  }  {\pgmlSetup
+{\itshape{}Hint: if you are stuck, notice above that the ratio \(\displaystyle \dfrac{f_2}{f_1} = a = \dfrac{404}{400} = {1.01}\).  What is the corresponding value of \(a\) for the second person?  If your answers are marked incorrect, and you believe them, be sure to use as many digits for the ratio as possible in your intermediate calculation.}  \par}%
+\par 
+%%% END HINT
+
+%%% BEGIN SOLUTION
+\par \par {\bf Solution: }{\it  ( Instructor solution preview: show the student solution after due date.  )\leavevmode\\\relax  }  {\pgmlSetup
+The Weber-Fechner law describes our ability to detect small differences in various stimuli.  For example, it can be applied to the sequence of audio frequencies we are able to distinguish between.  Consider a person that can detect an initial frequency of \(f_1 = 400\) Hertz.  The next frequency that can be detected is \(f_2 = 404\), meaning that \(f_{n+1} = {1.01}f_n\).
+
+{
+ a. What are the next two frequencies the person can detect?
+
+ \(f_3 = {408.04}\)
+
+ \(f_4 = {412.1204}\)
+
+ b. Suppose a more preceptive person can hear a second frequency of \(f_2=401\).  What are the next two frequencies that he can detect?
+
+ \(f_3 = {402.0025}\)
+
+ \(f_4 = {403.0075}\)
+
+ {\itshape{}Hint: if you are stuck, notice that our new ratio of successive values is \(\displaystyle \dfrac{f_2}{f_1} = \dfrac{401}{400} = {1.0025}\).}
+\par}%
+
+\par}%
+\par 
+%%% END SOLUTION
+\par{\small{\it Correct Answers:}
+\vspace{-\parskip}\begin{itemize}
+\item\begin{verbatim}408.04\end{verbatim}
+\item\begin{verbatim}412.1204\end{verbatim}
+\item\begin{verbatim}1.0025\end{verbatim}
+\item\begin{verbatim}402.0025\end{verbatim}
+\item\begin{verbatim}403.0075\end{verbatim}
+\end{itemize}}\par
+%% decoded old answers, saved. (keys = 
+\leavevmode\\\relax 
+\noindent {\tiny Generated by \copyright WeBWorK, http://webwork.maa.org, Mathematical Association of America}
+
+
+
+\vfill
+\end{document}
