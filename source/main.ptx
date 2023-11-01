@@ -47,6 +47,7 @@
     </frontmatter>
 
 <xi:include href="intro.ptx" />
+<xi:include href="derivatives.ptx" />
 
     <backmatter xml:id="backmatter">
       <title>Backmatter</title>

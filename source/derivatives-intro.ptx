@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<section xml:id="sect-derivative-intro">
+<title>Introduction to derivatives</title>
+<p>Recall our sketch from last time of position against time, but this time with some convenient changes.</p>
+<p>In calculus, we define the instantaneous rate of change as a limit of the average rate of change as the interval shrinks to zero (refer to the picture above, try to animate it in your head).  The instantaneous rate of change is so important that it has its own mathematical name, the <em>derivative</em>.  The derivative is a precise way of describing change.  In general, the derivative
+<ul>
+<li><p>is a new function, related to our original function</p></li>
+<li><p>at a point on a graph of a function gives the instantaneous rate of change of that function</p></li>
+<li><p>at that same point on the graph of a function gives the slope of the tangent line, <m>m_\text{tan}</m></p></li>
+<li><p>more precisely can be found using <me>f'(a) = \lim\limits_{\Delta t\to0}\dfrac{f(a + \Delta t) - f(a)}{\Delta t},</me> at some point at <m>x = a</m> on the graph of our function.</p></li>
+</ul>
+For simplicity, we often consider this at any input value <m>x</m> and replace <m>\Delta t</m> by the single symbol <m>h</m>.  After this, we have the standard \emph{limit definition of the derivative}\footnote{This important definition is the reason that we needed a little bit of time with limits before getting here.} <me>f'(x) = \lim\limits_{h\to0}\dfrac{f(a + h) - f(a)}{h},</me>
+When talking about derivatives, it's important to pause for notation. We read <m>f'(x)</m> as ``<m>f</m> prime of <m>x</m>''. We can also express this using ``dee-dee-ex'' or differential notation, <m>\dfrac{df}{dx}</m>. Prime notation is good for labeling, while differential notation is good for getting work done.</p>
+<p>
+Let's pause to see why we need such a complicated looking definition. Consider the function <m>f(x) = x^2 + 1</m> at the point <m>x_0 = 2</m>.  The following table should give some insight into the limit process and why it is even necessary.  Before getting started, notice that <m>f(2) = 2^2 + 1 = 5</m></p>
+<p>
+<!--><md>
+<m>\Delta x = h</m> \amp <m>x_{1} = x_{0} + h</m> \amp <m>f(x_1) = f(x_{0} + h)</m> \amp <m>\Delta f = f(x_{0} + h) - f(x_{0})</m> \amp <m>m_{\text{sec}} = \dfrac{\Delta f}{h}</m> \amp Points on graph<mrow>
+\hline\hline
+\multirow{3}{*}{1} \amp \amp \amp \amp \amp  <mrow>
+\multirow{3}{*}{0.1} \amp \amp \amp \amp \amp  <mrow>
+\multirow{3}{*}{0.01} \amp \amp \amp \amp \amp  <mrow>
+</md>-->
+What happens if we try to set <m>h = 0</m>?</p>
+<p>
+What is the pattern in the second-to-last column?</p>
+<p>
+What do you notice in the last column?</p>
+<p>
+We can replicate this algebraically, which looks scarier, but is more useful in the end.  Use the limit definition of the derivative to find the derivative of <m>f(x) = x^2</m>.</p>
+<p>Let's try with our earlier function <m>f(x) = x^2 + 1</m>.</p>
+<p>The derivative of a function evaluated at a point, gives the slope of the tangent line to the function at that point.  What is the slope of the tangent, <m>m_\text{tan}</m>, to <m>f(x) = x^2+1</m> at <m>x_0 = 2</m>?</p>
+<p>
+Before establishing faster rules, we can try this definition with a few other functions, in particular, one that is likely to be scarier, <m>f(x) = x^3</m> (a cubic function), and two that should be less scary, <m>f(x) = mx+b</m> and <m>f(x) = b</m> (a linear function and a constant function.  </p>
+<p>What do you notice about our answers? Or how those answers relate to the original function used to calculate that answer? Any patterns emerge?</p>
+<p>
+Based on patterns from the previous work, we can define  faster ways to directly calculate derivatives of many functions.  Assume that <m>f(x)</m> is the function we are interested in and that we know the derivatives of <m>g(x)</m> and <m>h(x)</m> as necessary. The symbols <m>b</m> and <m>k</m> represent constants.
+<ul>
+<li><p>Power rule (for derivatives) For the function <m>f(x) = x^n</m>, the derivative is <m>f'(x) = nx^{n-1}</m>. % Or, <m>f'(x) = \dfrac{df}{dx} = \dfrac{d}{dx}(x^n) = nx^{n-1}</m>.  In words, </p></li>
+<li><p>Constant rule. For the function <m>f(x) = b</m>, the derivative is <m>f'(x) = \dfrac{d}{dx}(b) = 0</m>.% In words, </p></li>
+<li><p>Constant product rule. For the function <m>f(x) = k \cdot g(x)</m>, the derivative is <me>f'(x) = \dfrac{d}{dx}(k\cdot g(x)) = \underline{\phantom{k\dfrac{d}{dx}(g(x)) = k\dfrac{dg}{dx}}}</me> %In words, </p></li>
+<li><p>Sum rule. For the function <m>f(x) = g(x) + h(x)</m>, the derivative is <me>f'(x) = \dfrac{d}{dx}\Big(g(x) + h(x)\Big) = \Big(\dfrac{d}{dx}(g(x))\Big) + \Big(\dfrac{d}{dx}(h(x))\Big)</me></p></li>
+</ul>
+</p>
+<p> What does this tell us about the derivative of <m>f(x) = 5x-9</m>?</p>
+
+<p>The function <m>s(t) = -4.9t^2 + 1.4t + 12</m> describes the height (in meters) of an object in free fall as a function of time (in seconds).  Set up a table to calculate average velocities of the object between <m>t_0 = 0</m> and <m>t_1 = 1</m> and again between <m>t_0 = 0</m> and <m>t_1 = 0.1</m>.</p>
+
+<p>Use the rules on the previous page to calculate <m>s'(t) = \dfrac{ds}{dt} = \dfrac{d}{dt}\Big(-4.9t^2 + 1.4t + 12\Big)</m>.  </p>
+
+<p>What is the slope of the tangent to <m>s(t)</m> at <m>t_0 = 0</m>? Using this, what is the equation to the tangent line to <m>s(t)</m> at <m>t_0 = 0</m>?</p>		
+</section>

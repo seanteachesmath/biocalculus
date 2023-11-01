@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+    <chapter xml:id="chap-intro"  xmlns:xi="http://www.w3.org/2001/XInclude">
+      <title>Introduction to Derivatives</title>
+      <introduction><p></p></introduction>
+<xi:include href="derivatives-intro.ptx" />
+<xi:include href="derivatives-more.ptx" />
+<!--><xi:include href="derivatives-interp.ptx" />
+<xi:include href="derivatives-application.ptx" />
+<xi:include href="derivatives-chain.ptx" />
+<xi:include href="derivatives-product.ptx" />-->
+</chapter>

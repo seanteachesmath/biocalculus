@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section xml:id="sect-intro-limits-infinity">
+<title>Limits at infinity and end behavior</title>
+		<p>
+			We have discussed the many ways to represent functions - what were they again?
+		</p>
+
+		<p>
+			Sometimes we need tools to make <em>very</em> precise descriptions of certain features or properties of functions (or their graphs). We’ll use this idea again, and at that time for very different purposes, but for now we will introduce important math notation that allows us to compactly describe important features of graphs. Consider the graph of <m>f(x) = mx+b</m>, which for numbers <m>m</m> and <m>b</m> is a straight line. Suppose both numbers are positive, we might have something like the following sketch.
+		</p>
+
+		<p>
+			What happens to the <m>y</m> values (function values) as <m>x</m> gets really large? What about as <m>x</m> decreases and becomes more and more negative?
+		</p>
+
+		<p>
+			We have a formal way of making such descriptions, and not only is it more <em>formal</em>, but once we get the hang of it, it is faster and more efficient that any other way we have of making and sharing such descriptions. We can use these ideas to quickly summarize important properties of many functions.
+		</p>
+
+		<p>
+			We can also summarize properties of exponentials and logarithms.
+		</p>
+
+		<p>
+			Unfortunately, these behaviors leave out many of the things we need to describe in other applications. It turns out we need to introduce another class of functions, called <em>rational functions</em>. A rational function is a ratio of polynomials. Here are a bunch of examples. Keep in mind that we might have ideas about graphs like <m>f(x) = x^2</m> or <m>g(x) = x^5</m> at this point, but it’s a bit more difficult to imagine the graphs of many rational functions without experience and practice.
+		</p>
+
+		<p>
+			To this point in math we are so used to searching for exact answers, but, as problems get more difficult, sometimes we need to approximate. We’ll introduce a graphical approximation technique called <q>the method of leading behavior</q> that sometimes helps us get quick insight into the graphs of complicated functions. We need some background first. We’ll start by talking about functions that get bigger as the input gets bigger, and like we do in many other situations, rank them and order them with respect to important properties.
+		</p>
+
+		<p>
+			We can do the same for functions that go to zero as the input gets bigger. We have already seen one example just above.
+		</p>
+
+		<p>
+			These ideas give us a way to approximate a function for extremely large values of its input. For a function <m>f(x)</m> we call <m>f_{\infty}(x)</m> its <sq><em>leading behavior at infinity</em></sq>. This new, but related, function describes the most important terms of the original function. Sometimes we don’t need all of the details and can get by with a simpler summary.
+		</p>
+
+		<p>
+			When we draw graphs, we often think about things like the vertical intercept of the graph. This means we are also asking questions about what happens for inputs near zero. Despite what we’ve just encountered, there are some counterintuitive ideas here - so proceed with caution. Using a calculator, which function has bigger values when the inputs are <q>small</q>? If <q>small</q> sounds imprecise, well, it is, but we typically mean <q>less than <m>1</m></q>.
+		</p>
+
+		<p>
+			This gives us a way to approximate a function for small values of the input. For a function <m>f(x)</m> we call <m>f_{0}(x)</m> its <sq><em>leading behavior at 0</em></sq>.
+		</p>
+
+		<p>
+			We are finally ready to return to the graphs of the rational functions. We can apply leading behavior to learn about graphs of rational functions - which show up in formulas in many biology and chemistry applications.
+		</p>
+
+		<p>
+			In short, these techniques let us draw broad, powerful conclusions about graphs without ever using a calculator. This is especially important if we are looking at a generic formula that contains <em>parameters</em> and we don’t have numbers to plug in to a calculator.
+		</p>
+
+<exercises>
+</exercises>
+</section>
+

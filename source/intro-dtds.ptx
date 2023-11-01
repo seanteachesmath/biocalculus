@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section xml:id="sect-intro-dtds">
+<title>Discrete-Time Dynamical Systems</title>
+		<p>
+			Having reviewed a few functions, we can put them to quick use. Try the following steps.
+		</p>
+
+		<p><ol>
+	<li> <p>Pick a number between 2 and 50.</p> </li>
+
+	<li> <p>Take its square root using your calculator.</p> </li>
+
+	<li> <p>Repeat taking the square root until you have a good idea about what happens.</p> </li>
+
+	<li> <p>Each <q>After</q> becomes the next <q>Before</q>.</p> </li>
+
+		</ol></p>
+
+		<p>
+			Record your observations in the table to the right.
+		</p>
+
+<!-- div attr= class="center"-->
+		<table>
+			<caption></caption>
+			<tabular>
+			<row header="yes">
+				<cell halign="center">Before <m>\sqrt{\quad}</m></cell>
+				<cell halign="center">After <m>\sqrt{\quad}</m></cell>
+			</row>
+			<row class="odd">
+				<cell halign="center"></cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="even">
+				<cell halign="center"></cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="odd">
+				<cell halign="center"></cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="even">
+				<cell halign="center"></cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="odd">
+				<cell halign="center"></cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="even">
+				<cell halign="center"></cell>
+				<cell halign="center"></cell>
+			</row>
+			</tabular>
+		</table><!--</div attr= class="center">-->
+
+		<p>
+			Depending on how patient you are, you computed something like <m>\sqrt{\sqrt{\sqrt{\sqrt{\dots\sqrt{\sqrt{\text{your original number}}}}}}}</m>. Now this may seem weird, or worse, confusing and unhelpful, but let’s think about what we did. We did the same thing over and over again. We applied the same function, again and again - that’s function composition. Taking our output and plugging it back in. In this case, a possibly surprising pattern emerged.
+		</p>
+
+		<p>
+			One step at a time, we can describe what we did using <m>x_1 = \sqrt{x_0}</m>, or, more generally, <m>x_{t+1} = \sqrt{x_{t}}</m>. Our new number<fn>		<p>
+			A while back we introduced subscripting as a way to keep track of a list of numbers. We wrote a polynomial as <m>p_n(x) = \sum\limits_{k = 0}^n a_k x^k</m> where every single <m>a_k</m> represented the number paired with the corresponding power of <m>x</m>, <m>x^{k}</m>.
+		</p></fn> <m>x_{t+1}</m> depends on our old number, and once we have <em>it</em> we can move on to the <em>next</em> number, <m>x_{t+2}</m>. The tedious work we did above with a calculator and copying decimals, we can do soon/below/next with a special graph.
+		</p>
+
+		<p>
+			The main idea is that we replace using a formula to evaluate a function with using its graph. Let’s try this, set <m>x_0 = 10</m>.
+		</p>
+
+<!-- div attr= class="center"-->
+		<table>
+			<caption></caption>
+			<tabular>
+			<row header="yes">
+				<cell halign="center"><m>n</m></cell>
+				<cell halign="center"><m>x_{t}</m></cell>
+			</row>
+			<row class="odd">
+				<cell halign="center">0</cell>
+				<cell halign="center">10</cell>
+			</row>
+			<row class="even">
+				<cell halign="center">1</cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="odd">
+				<cell halign="center">2</cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="even">
+				<cell halign="center">3</cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="odd">
+				<cell halign="center">4</cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="even">
+				<cell halign="center">5</cell>
+				<cell halign="center"></cell>
+			</row>
+			</tabular>
+		</table><!--</div attr= class="center">-->
+
+		<figure>
+	<image source="dtds.pdf"/>
+			<caption>image</caption>
+</figure>
+
+		<p>
+			We are building an idea called discrete-time dynamical systems. A dynamical system describes how something changes, and calling it discrete-time means we are talking about changes occurring step-by-step - like daily, weekly, or yearly measurements. The graphical technique is called <q>cobwebbing</q> and it’s name becomes clearer as we move ahead.
+		</p>
+
+		<p>
+			These equations are examples of mathematical models, and now we can try to build one from a short story. Suppose researchers monitor the dosing of a simple medicine. Omitting units, researchers collect data that suggests that patients absorb half of the dose of medicine present the previous day and are given a new dose to raise the concentration by one unit. If we let <m>M_t</m> denote the concentration in the bloodstream on day <m>t</m>, we can write a <em>mathematical model</em> to predict the dose under this scheme on the following day or days.
+		</p>
+
+		<p>
+			Starting from <m>M_0 = 1</m> or <m>M_0 = 5</m>, two different initial medicine concentrations, calculate the next 3 terms, that is <m>M_1, M_2, \text{ and } M_3</m>. To get you started <m>M_{n+1} = f(M_n) = 0.5M_{n} + 1</m>, from the previous page, so <m>M_1 = 0.5M_0+1</m>, where <m>M_0</m> is either <m>1</m> or <m>5</m>, your choice.
+		</p>
+
+		<p>
+			What happens? What happens instead if we start at <m>M_0 = 2</m>? Does that seem important, helpful, interesting, surprising?
+		</p>
+
+		<p>
+			This leads to an important concept called an <em>equilibrium point</em>. This is defined as the solution to or equation when input and output are both equal (i.e., our equation doesn’t change anything). We use <me>\underbrace{M_{t+1}}_\text{new (output)} = \underbrace{M_{t}}_\text{old (input)} = M^*,</me> where the asterisk on <m>M^*</m> just means that it is an important number. If so, <me>M_{t+1} = f(M_{t}) \text{ becomes } M^* = f(M^*),</me> and we have to solve whatever equation is left for the unknown quantity <m>M^*</m>. This is <em>no</em> different from how we would usually solve for an unknown quantity more familiarly called <m>x</m> in any other equation.
+		</p>
+
+		<p>
+			We can put down our calculators and use the following graph to find very similar results.
+		</p>
+
+		<figure>
+	<image source="med_dtds.pdf"/>
+			<caption>image</caption>
+</figure>
+
+		<p>
+			We refer to the solid line as the <q>model</q> or <q>updating function</q> and the dashed line as the <q>resetting line</q> or <q>diagonal</q>.
+		</p>
+
+		<p><ol>
+	<li> <p>Pick a starting number <m>M_0</m> on the horizontal axis. Go up (or down) to the curve that represents the model. You’ve just evaluated your function using its graph.</p> </li>
+
+	<li> <p>Move <em>horizontally</em> to the dashed line.</p> </li>
+
+	<li> <p>Go up (or down) to the curve that represents the model.</p> </li>
+
+	<li> <p>Repeat these last two steps until you sense a pattern.</p> </li>
+
+		</ol></p>
+
+		<p>
+			The solutions<fn>		<p>
+			Formally our solution is an ordered list of numbers or a plot of those numbers against the corresponding position in the list. Ideally we get enough insight from the pattern in the diagram that we don’t need to make a separate graph.
+		</p></fn> from the previous page are called <em>quantitative solutions</em> and the picture and description above are called <em>qualitative solutions</em>. One is likely more familiar, maybe even more convincing, but both are useful. Let’s summarize a few key points.
+		</p>
+
+		<p>
+			For a little more practice with the technique, we can use the following diagrams. For the straight-line graphs on this page, each <q>model</q> simply multiplies our old number by a new number. Here the <q>diagonal</q> line, previously dashed, is a thin solid line.
+		</p>
+
+		<figure>
+	<image source="linear_neg.pdf"/>
+			<caption>image</caption>
+</figure>
+
+		<figure>
+	<image source="linear_pos.pdf"/>
+			<caption>image</caption>
+</figure>
+
+		<p>
+			For a little more practice with the technique, we can use the following diagrams. Here the <q>diagonal</q> line, previously dashed, is a thin solid line. We aren’t going to worry about formulas just yet, but the updating function is a special quadratic function (its graph a parabola), and the number <m>r</m> stretches it vertically. Does the name <em>cobwebbing</em> FINALLY make sense?
+		</p>
+
+		<figure>
+	<image source="logistic_small.pdf"/>
+			<caption>image</caption>
+</figure>
+
+		<figure>
+	<image source="logistic_big.pdf"/>
+			<caption>image</caption>
+</figure>
+		<p>
+			These models can be used to analyze things such as simple harvesting of animal populations. Here we will assume a growing population for simplicity<fn>		<p>
+			If the population decays, the value of <m>\alpha</m> would be interpreted as negative.
+		</p></fn>. For example, if we let <m>N_t</m> be the population size in year <m>t</m>, the way a population changes can be described by the following mechanisms, <me>N_{t+1} = N_{t} + \alpha N_{t} + s - h.</me> The number <m>\alpha</m> is the decimal that describes the percent growth rate, and <m>s</m> and <m>h</m> are the stocking and harvesting rates, respectively. Suppose a population grows by <m>25\%</m> each year and we harvest 1000 individual, but do not stock. We can write the model below.
+		</p>
+
+		<p>
+			For a starting population of <m>N_0 = 3000</m>, find <m>N_1</m>, <m>N_2</m>, and <m>N_3</m>. Do you notice a pattern?
+		</p>
+
+		<p>
+			What is the equilibrium population value and does knowing that help you describe anything we encountered above?
+		</p>
+
+		<p>
+			A common medical tracer is technetium-99m. During a simple procedure, the amount of remaining radioactivity can be described by <m>T_{n+1} = 0.891T_{n}</m>, where <m>T_{n}</m> is the concentration at hour <m>n</m> and <m>T_{n+1}</m> is the concentration one hour later. Starting from a typical dose of <m>T_{0} = 18.5</m> units (units not specified), compute the amount of radioactivity remaining in the following table.
+		</p>
+
+		<table>
+			<caption></caption>
+			<tabular>
+			<row header="yes">
+				<cell halign="center"><m>n</m></cell>
+				<cell halign="center"><m>T_{n}</m></cell>
+			</row>
+			<row class="odd">
+				<cell halign="center"><m>0</m></cell>
+				<cell halign="center"><m>18.5</m></cell>
+			</row>
+			<row class="even">
+				<cell halign="center"><m>1</m></cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="odd">
+				<cell halign="center"><m>2</m></cell>
+				<cell halign="center"></cell>
+			</row>
+			<row class="even">
+				<cell halign="center"><m>3</m></cell>
+				<cell halign="center"></cell>
+			</row>
+			</tabular>
+		</table>
+
+		<p>
+			Now, we can make a quick sketch of a cobwebbing diagram.
+		</p>
+
+		<p>
+			Based on all of this evidence, what do you think will happen? Do you have any questions about safety? For this model, we can actually build a solution and connect a <em>lot</em> of dots between various mathematical topics and their applications in other areas. Let’s try. First, let’s write a formula for the solution. This gives the amount of radioactivity at <em>any</em> step, without having to compute values of all of the prior steps. Seems useful.
+		</p>
+
+		<p>
+			How much radioactivity remains after <m>n=6</m> hours?
+		</p>
+
+		<p>
+			How much radioactivity remains after <m>n=24</m> hours? It is helpful to write this as a base-<m>e</m> exponential, so we can more easily use calculators or make comparisons to other materials. Here we will use a <q>change of base</q> to rewrite the exponential function.
+		</p>
+
+		<p>
+			With this new, equivalent, solution, is it easier to answer the questions from the previous page? How much radioactivity remains after <m>n=6</m> hours? How much radioactivity remains after <m>n=24</m> hours?
+		</p>
+
+<exercises>
+</exercises>
+</section>
+

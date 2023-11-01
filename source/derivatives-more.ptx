@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<section xml:id="sect-derivative-exp-log">
+<title>Derivatives of exponential and logarithmic functions</title>
+
+<p>Sketch a graph of the <em>exponential (growth)</em> function <m>f(x) = e^{x}</m>.
+
+Using its graph, we can make some observations about properties of the derivative of the function.  The following questions might help with what comes next.
+<ul>
+<li><p>Is the graph increasing or decreasing?</p></li>
+<li><p>Is the graph getting steeper, shallower, or maybe something else?</p></li>
+</ul>
+</p>
+
+<p>Repeat with the \emph{exponential (decay)} function <m>g(x) = e^{-x}</m>, below.
+
+<em>Interestingly</em> we can't get very far using the limit definition of the derivative for either of these calculations without some extra work on the side.</p>
+
+<p>A derivative encodes a lot of information about the function it came from.  This can be useful to learn about important features of the graph of a function or to solve very important math and statistics problems\footnote{Finding trend lines (or curves) for scatterplots \emph{is} a calculus problem.}. This is all tied to how we think of or visualize the role of <m>m</m> in the equation <m>y = mx + b</m>, the graph of a straight line.</p>
+
+<p>Find the slope of the tangent line to <m>f(x) = e^{x}</m> at <m>x_0 = 0</m>? And the equation to the tangent line?</p>
+
+<p>What about at <m>x_0 = 1</m>?</p>
+
+<p>%Are there <m>x</m>-values for which the tangent line to <m>f(x) = e^{x}</m> is ever horizontal? Or vertical?
+%\vspace{2in}</p>
+
+<p>We can confirm this later, but a general rule for exponential functions is that for a constant <m>c</m>, <me>\dfrac{d}{dx}\left(e^{cx}\right) = ce^{cx}.</me></p>
+
+<p>Combining this new rule with earlier rules, find the following few derivatives.
+<ul>
+<li><p><m>f'(x)</m> for <m>f(x) = x^2 + e^{2x}</m></p></li>
+<li><p><m>\dfrac{d}{dx}\left(1 - \dfrac{1}{x^2} + e^{-x}\right)</m></p></li>
+</ul>
+</p>
+
+<p>Since we've discussed the exponential, we better mention the natural logarithm.  Again a graph is a good place to start.
+
+<ul>
+<li><p><m>f'(x)</m> for <m>f(x) = \ln(x) + e^{0.5x} - \dfrac{2}{x^6}</m></p></li>
+<li><p><m>\dfrac{d}{dx}\left(\ln(cx)\right)</m> where  <m>c</m> is a constant\footnote{Try using rules for logarithms to help with <m>\dfrac{d}{dx}\left(\ln(x^c)\right)</m>, for constant <m>c</m>.
+</p></li>
+</ul>
+</p>
+
+<p>In summary, we have the following facts.</p>
+
+<p>
+Finally, in some problems we need what are called \emph{higher-order} derivatives. We have to be careful how we write this, but the mechanics are nothing new.  For example, the second derivative can be written 
+<me>f''(x) = \dfrac{d^2f}{dx^2} =  \dfrac{d^2}{dx^2}\Big(f(x)\Big).</me> To do this, we start small, 
+<me>\dfrac{d^2}{dx^2}\Big(f(x)\Big) = \dfrac{d}{dx}\Big(\dfrac{d}{dx}\Big(f(x)\Big)\Big).</me> In words, we take the derivative, then take its derivative - using the exact same techniques.  </p>
+
+<p>One thing to point out - it is perfectly fine to mix the prime and differential notation, the prime notation is a faster label, but the differential notation is useful when differentiating an explicit formula.  If we need a really high-order derivative, the primes become too difficult to count, so instead we often write something like <m>f^{(n)}(x) = \dfrac{d^n f}{dx^n}</m> for some number <m>n</m>, but to be honest we won't really need to go much past a second- or third-order derivative for most purposes.</p>
+
+<p><ul>
+<li><p><m>f'(x)</m> and <m>f''(x)</m> for <m>f(x) = \ln(x) + e^{0.5x} - \dfrac{2}{x^6}</m></p></li>
+<li><p><m>g'(x)</m>, <m>g''(x)</m> and <m>g'''(x)</m> for <m>g(x) = x^2 + e^x</m>.</p></li>
+</ul></p>
+</section>

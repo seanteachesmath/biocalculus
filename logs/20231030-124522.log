@@ -1,0 +1,12 @@
+INFO    : PreTeXt project found in `/Users/slaverty/GitHub/biocalculus`.
+WARNING : Using CLI version 2.0.3 but project's `requirements.txt`
+WARNING : is configured to use 1.7.5. Consider either installing
+WARNING : CLI version 1.7.5 or running `pretext init --refresh`
+WARNING : to update `requirements.txt` to match 2.0.3.
+ERROR   : XInclude Error caused build to fail:
+ERROR   : /Users/slaverty/GitHub/biocalculus/source/derivatives.ptx:5:44:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: introduction line 5 and introductions
+/Users/slaverty/GitHub/biocalculus/source/main.ptx:50:0:ERROR:XINCLUDE:XINCLUDE_NO_FALLBACK: could not load /Users/slaverty/GitHub/biocalculus/source/derivatives.ptx, and no fallback was found
+CRITICAL: XML syntax for source file is invalid
+INFO    : ------------------------
+INFO    : While running pretext, the following errors occurred:
+

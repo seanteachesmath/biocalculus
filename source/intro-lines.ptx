@@ -1,5 +1,97 @@
 <?xml version='1.0' encoding='utf-8'?>
       <section xml:id="sect-intro-lines">
         <title>Linear functions</title>
-        <p>Hello</p>
+
+
+		<p>
+			The idea of a function is central to most of mathematics - a function carefully explains how two quantities<fn>		<p>
+			In reality, or in applications we sometimes need to relate more than two quantities, though we probably won’t get into that this semester.
+		</p></fn> are related. We can, describe these relationships
+		</p>
+
+		<p><ul>	<li><p>with words,</p></li>
+	<li><p>with sketches or graphs,</p></li>
+	<li><p>with data, or</p></li>
+	<li><p>with (algebraic) formulas.</p></li>
+
+		</ul></p>
+
+		<p>
+			What functions do you know <q>by name</q>? We’ll see more of these later, but for the moment, ask yourself if you can pair a formula or a graph with each of those names?
+		</p>
+
+		<p>
+			You have likely used a variety of formulas and functions throughout math and science classes, research, or work. In math, we typically say something like <me>y = f(x).</me>
+		</p>
+
+		<p>
+			Keep in mind that you use lots of formulas elsewhere with a variety of different letters. We will usually refer to functions as <m>f(x)</m>, but in applications might try to use letters like <m>g = g(w)</m> where we use the same letter for the output variable and function name - this might seem weird, but it’s actually <em>less</em> to worry about and gives more clues about the relationship <em>and</em> how to use it. Before talking more about specific examples and applications of functions, let’s just give an example of relationships between quantities that <em>might or might not</em> illustrate functions and try to recognize what goes wrong.
+		</p>
+
+		<p>
+			The most important example of a function to start is the linear function. We use these as for a variety of reasons in mathematics and science. You may recall, <me>y = f(x) = mx+b.</me>
+		</p>
+
+		<p>
+			It turns out, this isn’t as useful as you may have been lead to believe. A more versatile formula is, <me>y = f(x) = y_0 + m(x - x_0).</me>
+		</p>
+
+		<p>
+			Fortunately, these are largely interchangeable, it just depends on what information we have access to as we get started.
+		</p>
+
+		<p>
+			To start to see how these are connected, what’s something that both formulas have in common?
+		</p>
+
+		<p>
+			You might be thinking about scatterplots and <q>trend lines</q>, which is a good place to be. That process actually <em>uses</em> some of the calculus we will encounter later. To get started we will be a bit more casual.
+		</p>
+
+		<p>
+			Consider the following data that relates percent seed germination, <m>g</m>, to minimum winter temperature, <m>w</m> from researchers studying seed germination.
+		</p>
+
+		<table>
+			<caption></caption>
+			<tabular>
+			<row header="yes">
+				<cell halign="left"><m>w</m>, (<m>{}^\circ\text{F}</m>)</cell>
+				<cell halign="left"><m>g</m>, (%)</cell>
+			</row>
+			<row class="odd">
+				<cell halign="left">20</cell>
+				<cell halign="left">17.68</cell>
+			</row>
+			<row class="even">
+				<cell halign="left">26</cell>
+				<cell halign="left">32.32</cell>
+			</row>
+			<row class="odd">
+				<cell halign="left">28</cell>
+				<cell halign="left">37.20</cell>
+			</row>
+			<row class="even">
+				<cell halign="left">36</cell>
+				<cell halign="left">56.72</cell>
+			</row>
+			</tabular>
+		</table>
+
+		<p><ol>	<li><p>What do you notice?</p></li>
+	<li><p>Find the slope of the linear function <m>g(w)</m> that relates <m>g</m> to <m>w</m>.</p></li>
+	<li><p>Write the equation of the linear function <m>g(w)</m> that relates <m>g</m> to <m>w</m>.</p></li>
+	<li><p>What is the expected percent seed germination for a minimum winter temperature of <m>30.5^\circ\text{F}</m>?</p></li>
+	<li><p>Suppose you found 25% seed germination, what is the corresponding minimum winter temperature?</p></li>
+
+		</ol></p>
+
+		<p>
+			Before we leave this topic, let’s look at these formulas in some extreme situations and figure out how they are connected. This will hopefully give us confidence with a less familiar-looking formula as well as give us some reasoning tools for how graphs and formulas are connected.
+		</p>
+
+		<p>
+			Based on all of this, what are some potential benefits of studying, using, or presenting linear functions?
+		</p>
+
       </section>
