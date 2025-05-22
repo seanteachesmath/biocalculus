@@ -1,0 +1,85 @@
+WARNING : Using CLI version 2.18.3 but project's `requirements.txt`
+WARNING : is configured to use 1.7.5. Consider either installing
+WARNING : CLI version 1.7.5 or running `pretext update`
+WARNING : to update `requirements.txt` and other managed files to match 2.18.3.
+INFO    : Since no target was supplied, we will use "web".
+
+INFO    : Building target web
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Generating any needed assets.
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Finished generating assets.
+
+INFO    : Preparing to build into /Users/slaverty/GitHub/biocalculus/output/web.
+INFO    : discovering source file's directory name: /Users/slaverty/GitHub/biocalculus/source
+INFO    : verifying and expanding input directory: /Users/slaverty/GitHub/biocalculus/source/../generated-assets
+INFO    : input directory expanded to absolute path: /Users/slaverty/GitHub/biocalculus/generated-assets
+INFO    : verifying and expanding input directory: /Users/slaverty/GitHub/biocalculus/source/../assets
+INFO    : input directory expanded to absolute path: /Users/slaverty/GitHub/biocalculus/assets
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : Downloading rs services file from https://runestone.academy/cdn/runestone/latest/webpack_static_imports.xml.
+INFO    : Runestone Services via online CDN query: version 7.7.0
+INFO    : Downloading Runestone Services, version 7.7.0
+INFO    : Extracting Runestone Services from archive file
+INFO    : Using prebuilt CSS theme: default-legacy with options: {'options': {'primary-color': '#195684', 'secondary-color': '#932c1c'}, 'contrast-checks': {}}
+INFO    : converting /Users/slaverty/GitHub/biocalculus/source/main.ptx to HTML in /var/folders/pg/q69712kj6j5f5mt8fv1bsk6h0000gp/T/ptx-10y05foi
+INFO    : XSL conversion of /Users/slaverty/GitHub/biocalculus/source/main.ptx by /Users/slaverty/.ptx/2.18.3/core/xsl/pretext-html.xsl
+INFO    : messages from the log for XSL processing:
+ERROR   : * PTX:ERROR: the @xml:id value "chap-intro" should be unique, but is authored multiple times.
+INFO    : *            Results will be unpredictable, and likely incorrect.  Information on the locations follows:
+INFO    : *              located within: "chap-intro" (xml:id), "Introduction" (title)
+INFO    : *              located within: "chap-intro" (xml:id), "Introduction to Derivatives" (title)
+INFO    : * PTX:INFO:   checking ONLY the last TWO YEARS of element deprecations.
+Rerun with the string parameter "author.deprecations.all" set to "yes" to check your source against all deprecations.
+WARNING : * PTX:DEPRECATE: (2023-08-08) a "website" element with "address" and "name" children has changed.  Continue to use the "website" element as before, but replace the "address" and "name" children with a single "url" element, which is more flexible and reliable.  We will try to honor your intent, but you may prefer your own adjustments. (1 time)
+INFO    : *              located within: "frontmatter" (xml:id)
+INFO    : * --------------
+WARNING : * PTX:DEPRECATE: (2024-10-08) elements previously included in a "titlepage" element inside the "frontmatter" (author, editor, credit, date, and event) should now be placed in "frontmatter/bibinfo".  To ensure a title page is created, put only the empty element "titlepage-items" inside "titlepage".  Until you move these elements, we will try to honor your intent. (1 time)
+INFO    : *              located within: "frontmatter" (xml:id)
+INFO    : * --------------
+WARNING : * PTX:DEPRECATE: (2024-10-08) elements previously included in a "colophon" element inside the "frontmatter" (credit, copyright, edition, and website) should now be placed in "frontmatter/bibinfo". To produce a "colophon", include only the empty element "colophon-items" inside "colophon" Until you move these elements, we will try to honor your intent. (1 time)
+INFO    : *              located within: "frontmatter" (xml:id)
+INFO    : * --------------
+WARNING : * PTX:DEPRECATE: (2024-07-12) the html/css/@style publication file entry has been deprecated for replacement by @theme. See the Guide for theme options.
+INFO    : * --------------
+INFO    : successful application of /Users/slaverty/.ptx/2.18.3/core/xsl/pretext-html.xsl
+INFO    : Removing temporary directory /var/folders/pg/q69712kj6j5f5mt8fv1bsk6h0000gp/T/ptx-10y05foi
+INFO    : Removing temporary directory /var/folders/pg/q69712kj6j5f5mt8fv1bsk6h0000gp/T/ptx-rtqp04xo
+INFO    : 
+Success! Run `pretext view web` to see the results.
+
+INFO    : 
+----------------------------------------------------
+INFO    : While running pretext, the following errors occurred:
+
+INFO    : (see log messages above or in the 'logs' folder for more information)
+INFO    : ----------------------------------------------------
