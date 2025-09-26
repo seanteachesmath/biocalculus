@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Discrete-Time Dynamical Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Bio-Calculus">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.9.10';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.fea5c754ab3e056b.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.b37c97cbe7a5455b.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span> <span class="subtitle">Notes for Fall 2025</span></a></h1>
+<p class="byline"></p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sect-intro-exp.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-intro.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sect-intro-limits-infinity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-intro-lines.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Linear functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sect-intro-lines.html#guided-notes-intro-lines" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Guided Notes for the Section</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sect-intro-lines.html#sub-intro-linear-exercises" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sect-intro-lines.html#sub-intro-linear-exercises-2" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Find the following linear functions.</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-intro-exp.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Exponential and Logarithmic functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sect-intro-exp.html#guided-notes-intro-exp" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Guided Notes for the Section</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sect-intro-exp.html#sub-exp-exercises" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sect-intro-exp.html#sub-exp-exercises-2" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sect-intro-dtds.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Discrete-Time Dynamical Systems</span></a></div>
+<ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sect-intro-dtds.html#sect-intro-dtds-37" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-intro-limits-infinity.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Limits at infinity and end behavior</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sect-intro-limits-infinity.html#sect-intro-limits-infinity-15" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-derivatives.html" class="internal"><span class="codenumber">2</span> <span class="title">Introduction to Derivatives</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sect-derivative-intro.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Rates of change</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-derivative-intro.html#subsec-graphs-rates-of-change" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Visualizing rates of change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sect-derivative-intro.html#subsec-tables-rates-of-change" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Tabulating rates of change</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sect-intro-dtds"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete-Time Dynamical Systems</span>
+</h2>
+<div class="para" id="sect-intro-dtds-2">Having reviewed a few functions, we can put them to quick use. Try the following steps.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-intro-dtds-3">
+<ol class="decimal" id="sect-intro-dtds-3-1">
+<li id="sect-intro-dtds-3-1-1">
+<div class="para" id="sect-intro-dtds-3-1-1-1">Pick a number between 2 and 50.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sect-intro-dtds-3-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sect-intro-dtds-3-1-2">
+<div class="para" id="sect-intro-dtds-3-1-2-1">Take its square root using your calculator.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sect-intro-dtds-3-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sect-intro-dtds-3-1-3">
+<div class="para" id="sect-intro-dtds-3-1-3-1">Repeat taking the square root until you have a good idea about what happens.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sect-intro-dtds-3-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sect-intro-dtds-3-1-4">
+<div class="para" id="sect-intro-dtds-3-1-4-1">Each “After” becomes the next “Before”.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sect-intro-dtds-3-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-4">Record your observations in the table to the right.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="sect-intro-dtds-5"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 1.3.1"><a href="#sect-intro-dtds-5" title="Copy heading and permalink for Table 1.3.1" aria-label="Copy heading and permalink for Table 1.3.1">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b0 r0 l0 t0 lines">Before <span class="process-math">\(\sqrt{\quad}\)</span>
+</th>
+<th scope="col" class="c m b0 r0 l0 t0 lines">After <span class="process-math">\(\sqrt{\quad}\)</span>
+</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><div class="para" id="sect-intro-dtds-6">Depending on how patient you are, you computed something like <span class="process-math">\(\sqrt{\sqrt{\sqrt{\sqrt{\dots\sqrt{\sqrt{\text{your original number}}}}}}}\text{.}\)</span> Now this may seem weird, or worse, confusing and unhelpful, but let’s think about what we did. We did the same thing over and over again. We applied the same function, again and again - that’s function composition. Taking our output and plugging it back in. In this case, a possibly surprising pattern emerged.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-7">One step at a time, we can describe what we did using <span class="process-math">\(x_1 = \sqrt{x_0}\text{,}\)</span> or, more generally, <span class="process-math">\(x_{t+1} = \sqrt{x_{t}}\text{.}\)</span> Our new number<details class="ptx-footnote" aria-live="polite" id="sect-intro-dtds-7-3"><summary class="ptx-footnote__number" title="Footnote 1.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sect-intro-dtds-7-3"><div class="para" id="sect-intro-dtds-7-3-1">A while back we introduced subscripting as a way to keep track of a list of numbers. We wrote a polynomial as <span class="process-math">\(p_n(x) = \sum\limits_{k = 0}^n a_k x^k\)</span> where every single <span class="process-math">\(a_k\)</span> represented the number paired with the corresponding power of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(x^{k}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details> <span class="process-math">\(x_{t+1}\)</span> depends on our old number, and once we have <em class="emphasis">it</em> we can move on to the <em class="emphasis">next</em> number, <span class="process-math">\(x_{t+2}\text{.}\)</span> The tedious work we did above with a calculator and copying decimals, we can do soon/below/next with a special graph.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-8">The main idea is that we replace using a formula to evaluate a function with using its graph. Let’s try this, set <span class="process-math">\(x_0 = 10\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="sect-intro-dtds-9"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 1.3.2"><a href="#sect-intro-dtds-9" title="Copy heading and permalink for Table 1.3.2" aria-label="Copy heading and permalink for Table 1.3.2">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b0 r0 l0 t0 lines"><span class="process-math">\(n\)</span></th>
+<th scope="col" class="c m b0 r0 l0 t0 lines"><span class="process-math">\(x_{t}\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">10</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">3</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">4</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">5</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><figure class="figure figure-like" id="sect-intro-dtds-10"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/dtds.pdf" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>image<div class="autopermalink" data-description="Figure 1.3.3"><a href="#sect-intro-dtds-10" title="Copy heading and permalink for Figure 1.3.3" aria-label="Copy heading and permalink for Figure 1.3.3">🔗</a></div></figcaption></figure><div class="para" id="sect-intro-dtds-11">We are building an idea called discrete-time dynamical systems. A dynamical system describes how something changes, and calling it discrete-time means we are talking about changes occurring step-by-step - like daily, weekly, or yearly measurements. The graphical technique is called “cobwebbing” and it’s name becomes clearer as we move ahead.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-12">These equations are examples of mathematical models, and now we can try to build one from a short story. Suppose researchers monitor the dosing of a simple medicine. Omitting units, researchers collect data that suggests that patients absorb half of the dose of medicine present the previous day and are given a new dose to raise the concentration by one unit. If we let <span class="process-math">\(M_t\)</span> denote the concentration in the bloodstream on day <span class="process-math">\(t\text{,}\)</span> we can write a <em class="emphasis">mathematical model</em> to predict the dose under this scheme on the following day or days.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-13">Starting from <span class="process-math">\(M_0 = 1\)</span> or <span class="process-math">\(M_0 = 5\text{,}\)</span> two different initial medicine concentrations, calculate the next 3 terms, that is <span class="process-math">\(M_1, M_2, \text{ and } M_3\text{.}\)</span> To get you started <span class="process-math">\(M_{n+1} = f(M_n) = 0.5M_{n} + 1\text{,}\)</span> from the previous page, so <span class="process-math">\(M_1 = 0.5M_0+1\text{,}\)</span> where <span class="process-math">\(M_0\)</span> is either <span class="process-math">\(1\)</span> or <span class="process-math">\(5\text{,}\)</span> your choice.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-14">What happens? What happens instead if we start at <span class="process-math">\(M_0 = 2\text{?}\)</span> Does that seem important, helpful, interesting, surprising?<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-intro-dtds-15">
+<div class="para">This leads to an important concept called an <em class="emphasis">equilibrium point</em>. This is defined as the solution to or equation when input and output are both equal (i.e., our equation doesn’t change anything). We use</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\underbrace{M_{t+1}}_\text{new (output)} = \underbrace{M_{t}}_\text{old (input)} = M^*,
+\end{equation*}
+</div>
+<div class="para">where the asterisk on <span class="process-math">\(M^*\)</span> just means that it is an important number. If so,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M_{t+1} = f(M_{t}) \text{ becomes } M^* = f(M^*),
+\end{equation*}
+</div>
+<div class="para">and we have to solve whatever equation is left for the unknown quantity <span class="process-math">\(M^*\text{.}\)</span> This is <em class="emphasis">no</em> different from how we would usually solve for an unknown quantity more familiarly called <span class="process-math">\(x\)</span> in any other equation.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-16">We can put down our calculators and use the following graph to find very similar results.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="sect-intro-dtds-17"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/med_dtds.pdf" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>image<div class="autopermalink" data-description="Figure 1.3.4"><a href="#sect-intro-dtds-17" title="Copy heading and permalink for Figure 1.3.4" aria-label="Copy heading and permalink for Figure 1.3.4">🔗</a></div></figcaption></figure><div class="para" id="sect-intro-dtds-18">We refer to the solid line as the “model” or “updating function” and the dashed line as the “resetting line” or “diagonal”.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sect-intro-dtds-19">
+<ol class="decimal" id="sect-intro-dtds-19-1">
+<li id="sect-intro-dtds-19-1-1">
+<div class="para" id="sect-intro-dtds-19-1-1-1">Pick a starting number <span class="process-math">\(M_0\)</span> on the horizontal axis. Go up (or down) to the curve that represents the model. You’ve just evaluated your function using its graph.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-19-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sect-intro-dtds-19-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sect-intro-dtds-19-1-2">
+<div class="para" id="sect-intro-dtds-19-1-2-1">Move <em class="emphasis">horizontally</em> to the dashed line.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-19-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sect-intro-dtds-19-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sect-intro-dtds-19-1-3">
+<div class="para" id="sect-intro-dtds-19-1-3-1">Go up (or down) to the curve that represents the model.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-19-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sect-intro-dtds-19-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sect-intro-dtds-19-1-4">
+<div class="para" id="sect-intro-dtds-19-1-4-1">Repeat these last two steps until you sense a pattern.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-19-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sect-intro-dtds-19-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-20">The solutions<details class="ptx-footnote" aria-live="polite" id="sect-intro-dtds-20-1"><summary class="ptx-footnote__number" title="Footnote 1.3.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="sect-intro-dtds-20-1"><div class="para" id="sect-intro-dtds-20-1-1">Formally our solution is an ordered list of numbers or a plot of those numbers against the corresponding position in the list. Ideally we get enough insight from the pattern in the diagram that we don’t need to make a separate graph.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details> from the previous page are called <em class="emphasis">quantitative solutions</em> and the picture and description above are called <em class="emphasis">qualitative solutions</em>. One is likely more familiar, maybe even more convincing, but both are useful. Let’s summarize a few key points.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-21">For a little more practice with the technique, we can use the following diagrams. For the straight-line graphs on this page, each “model” simply multiplies our old number by a new number. Here the “diagonal” line, previously dashed, is a thin solid line.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="sect-intro-dtds-22"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/linear_neg.pdf" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>image<div class="autopermalink" data-description="Figure 1.3.5"><a href="#sect-intro-dtds-22" title="Copy heading and permalink for Figure 1.3.5" aria-label="Copy heading and permalink for Figure 1.3.5">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="sect-intro-dtds-23"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/linear_pos.pdf" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>image<div class="autopermalink" data-description="Figure 1.3.6"><a href="#sect-intro-dtds-23" title="Copy heading and permalink for Figure 1.3.6" aria-label="Copy heading and permalink for Figure 1.3.6">🔗</a></div></figcaption></figure><div class="para" id="sect-intro-dtds-24">For a little more practice with the technique, we can use the following diagrams. Here the “diagonal” line, previously dashed, is a thin solid line. We aren’t going to worry about formulas just yet, but the updating function is a special quadratic function (its graph a parabola), and the number <span class="process-math">\(r\)</span> stretches it vertically. Does the name <em class="emphasis">cobwebbing</em> FINALLY make sense?<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="sect-intro-dtds-25"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/logistic_small.pdf" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>image<div class="autopermalink" data-description="Figure 1.3.7"><a href="#sect-intro-dtds-25" title="Copy heading and permalink for Figure 1.3.7" aria-label="Copy heading and permalink for Figure 1.3.7">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="sect-intro-dtds-26"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/logistic_big.pdf" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>image<div class="autopermalink" data-description="Figure 1.3.8"><a href="#sect-intro-dtds-26" title="Copy heading and permalink for Figure 1.3.8" aria-label="Copy heading and permalink for Figure 1.3.8">🔗</a></div></figcaption></figure><div class="para logical" id="sect-intro-dtds-27">
+<div class="para">These models can be used to analyze things such as simple harvesting of animal populations. Here we will assume a growing population for simplicity<details class="ptx-footnote" aria-live="polite" id="sect-intro-dtds-27-1"><summary class="ptx-footnote__number" title="Footnote 1.3.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="sect-intro-dtds-27-1"><div class="para" id="sect-intro-dtds-27-1-1">If the population decays, the value of <span class="process-math">\(\alpha\)</span> would be interpreted as negative.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-27-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>. For example, if we let <span class="process-math">\(N_t\)</span> be the population size in year <span class="process-math">\(t\text{,}\)</span> the way a population changes can be described by the following mechanisms,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+N_{t+1} = N_{t} + \alpha N_{t} + s - h.
+\end{equation*}
+</div>
+<div class="para">The number <span class="process-math">\(\alpha\)</span> is the decimal that describes the percent growth rate, and <span class="process-math">\(s\)</span> and <span class="process-math">\(h\)</span> are the stocking and harvesting rates, respectively. Suppose a population grows by <span class="process-math">\(25\%\)</span> each year and we harvest 1000 individual, but do not stock. We can write the model below.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-28">For a starting population of <span class="process-math">\(N_0 = 3000\text{,}\)</span> find <span class="process-math">\(N_1\text{,}\)</span> <span class="process-math">\(N_2\text{,}\)</span> and <span class="process-math">\(N_3\text{.}\)</span> Do you notice a pattern?<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-29">What is the equilibrium population value and does knowing that help you describe anything we encountered above?<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-30">A common medical tracer is technetium-99m. During a simple procedure, the amount of remaining radioactivity can be described by <span class="process-math">\(T_{n+1} = 0.891T_{n}\text{,}\)</span> where <span class="process-math">\(T_{n}\)</span> is the concentration at hour <span class="process-math">\(n\)</span> and <span class="process-math">\(T_{n+1}\)</span> is the concentration one hour later. Starting from a typical dose of <span class="process-math">\(T_{0} = 18.5\)</span> units (units not specified), compute the amount of radioactivity remaining in the following table.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="sect-intro-dtds-31"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 1.3.9"><a href="#sect-intro-dtds-31" title="Copy heading and permalink for Table 1.3.9" aria-label="Copy heading and permalink for Table 1.3.9">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b0 r0 l0 t0 lines"><span class="process-math">\(n\)</span></th>
+<th scope="col" class="c m b0 r0 l0 t0 lines"><span class="process-math">\(T_{n}\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(18.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><div class="para" id="sect-intro-dtds-32">Now, we can make a quick sketch of a cobwebbing diagram.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-33">Based on all of this evidence, what do you think will happen? Do you have any questions about safety? For this model, we can actually build a solution and connect a <em class="emphasis">lot</em> of dots between various mathematical topics and their applications in other areas. Let’s try. First, let’s write a formula for the solution. This gives the amount of radioactivity at <em class="emphasis">any</em> step, without having to compute values of all of the prior steps. Seems useful.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-34">How much radioactivity remains after <span class="process-math">\(n=6\)</span> hours?<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-35">How much radioactivity remains after <span class="process-math">\(n=24\)</span> hours? It is helpful to write this as a base-<span class="process-math">\(e\)</span> exponential, so we can more easily use calculators or make comparisons to other materials. Here we will use a “change of base” to rewrite the exponential function.<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-35" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sect-intro-dtds-36">With this new, equivalent, solution, is it easier to answer the questions from the previous page? How much radioactivity remains after <span class="process-math">\(n=6\)</span> hours? How much radioactivity remains after <span class="process-math">\(n=24\)</span> hours?<div class="autopermalink" data-description="Paragraph"><a href="#sect-intro-dtds-36" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="exercises" id="sect-intro-dtds-37"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<div class="autopermalink" data-description="Exercises 1.3"><a href="#sect-intro-dtds-37" title="Copy heading and permalink for Exercises 1.3" aria-label="Copy heading and permalink for Exercises 1.3">🔗</a></div></section><div class="autopermalink" data-description="Section 1.3: Discrete-Time Dynamical Systems"><a href="#sect-intro-dtds" title="Copy heading and permalink for Section 1.3: Discrete-Time Dynamical Systems" aria-label="Copy heading and permalink for Section 1.3: Discrete-Time Dynamical Systems">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sect-intro-exp.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sect-intro-limits-infinity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
