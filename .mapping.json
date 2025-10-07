@@ -1,1 +1,1 @@
-{"source/main.ptx": ["biocalculus", "frontmatter", "backmatter"], "source/intro.ptx": ["chap-intro"], "source/intro-lines.ptx": ["sect-intro-lines"], "source/derivatives.ptx": ["chap-derivatives"], "source/derivatives-intro.ptx": ["sect-derivative-intro"]}
+{"source/main.ptx": ["biocalculus", "frontmatter", "backmatter"], "source/intro.ptx": ["chap-intro"], "source/intro-lines.ptx": ["sect-intro-lines"], "source/derivatives.ptx": ["chap-derivatives"], "source/derivatives-intro.ptx": ["sect-derivative-intro", "desmos-exp-tangent"]}
