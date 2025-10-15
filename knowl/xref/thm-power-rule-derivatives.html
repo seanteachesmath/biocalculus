@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Power rule for derivatives.</span>
+</h3>
+<div class="para logical">
+<div class="para">For a <em class="emphasis">power function</em> <span class="process-math">\(f(x) = x^{n}\)</span> and <em class="emphasis">any</em> nonzero power <span class="process-math">\(n\text{,}\)</span> the derivative is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f'(x) = \dfrac{d}{dx}\Big(x^{n}\Big) = nx^{n-1}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-power-rule-derivatives-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.3.4: Power rule for derivatives"><a href="#thm-power-rule-derivatives" title="Copy heading and permalink for Theorem 2.3.4: Power rule for derivatives" aria-label="Copy heading and permalink for Theorem 2.3.4: Power rule for derivatives">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">The proof is contained in the limit definition of the derivative.  Recall that when we expanded <span class="process-math">\((x+h)^2\)</span> we found <span class="process-math">\((x+h)^2 = 1x^2 + 2xh + 1h^2\text{,}\)</span> and for <span class="process-math">\((x+h)^3 = 1x^3 + 3x^{2}h + 3xh^{2} + 1h^3\text{,}\)</span> and finally, <span class="process-math">\((x+h)^4 = 1x^4 + 4x^{3}h + 6x^{2}h^{2} + 4xh^{3} + 1h^4\text{.}\)</span>  The first terms combine with the corresponding power of <span class="process-math">\(x\)</span> that is subtracted in the numerator, and the term that remains has a coefficient that matches the order of the original power in the binomial expansion. Writing out the first few rows of Pascal’s Triangle might give you some more confidence in this pattern.<div class="autopermalink" data-description="Paragraph"><a href="#thm-power-rule-derivatives-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+f'(x) &amp; = \lim\limits_{h\to0} \frac{f(x+h) - f(x)}{h}\\
+&amp; = \lim\limits_{h\to0}\frac{(x+h)^n - (x)^n}{h}\\
+&amp; = \lim\limits_{h\to0}\frac{x^n+nx^{n-1}h + \cdots + nxh^{n-1}  + h^{n}- x^n}{h}\\
+&amp; = \lim\limits_{h\to0}\frac{nx^{n-1}h + \cdots + nxh^{n-1}  + h^{n}}{h}\\
+&amp; = \lim\limits_{h\to0}\frac{h(nx^{n-1} + \cdots + nxh^{n-2}  + h^{n-1})}{h}\\
+&amp; = \lim\limits_{h\to0}nx^{n-1} + \cdots + nxh^{n-2}  + h^{n-1}\\
+f'(x) &amp; = nx^{n-1} + \cdots + nx(0)^{n-2}  + (0)^{n-1} = nx^{n-1}
+\end{align*}
+</div>
+<div class="para">In taking the limit as <span class="process-math">\(h \to 0\)</span> all of the terms that still contain <span class="process-math">\(h\)</span> vanish and all that remains is the term that only involves <span class="process-math">\(x\)</span> but not <span class="process-math">\(h\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-power-rule-derivatives-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.3.4.1"><a href="#thm-power-rule-derivatives-3" title="Copy heading and permalink for Proof 2.3.4.1" aria-label="Copy heading and permalink for Proof 2.3.4.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec-derivative-rules.html#thm-power-rule-derivatives">in-context</a></span>
+</body>
+</html>
